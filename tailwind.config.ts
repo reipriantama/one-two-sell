@@ -19,6 +19,7 @@ const config: Config = {
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
+        albertSans: ['Albert Sans', 'sans-serif'],
       },
     },
   },

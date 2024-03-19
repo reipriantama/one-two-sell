@@ -8,7 +8,7 @@ const SideBarEvent = () => {
   const thirdFilters = ['Waktu', 'Harga'];
 
   return (
-    <div className='px-12 pt-6 w-[270px] border-r-[1px] border-[#D9D9D9] h-[90vh]'>
+    <div className='px-12 pt-6 w-[270px] border-r-[1px] border-[#D9D9D9] h-screen sticky top-0'>
       <div className='flex justify-between items-center pb-9 border-b-[1px] border-[#D9D9D9] mb-6'>
         <div className='font-bold text-2xl text-[#141414]'>Filter</div>
         <Image
@@ -18,6 +18,8 @@ const SideBarEvent = () => {
           height={24}
         />
       </div>
+
+      {/* gunakan accordion https://ui.shadcn.com/docs/components/accordion */}
       <div className='flex flex-col pb-9 border-b-[1px] border-[#D9D9D9] mb-6 gap-6'>
         {firstFilters.map((data, index) => (
           <div key={index} className='flex justify-between items-center'>

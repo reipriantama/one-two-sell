@@ -2,7 +2,7 @@
   {
     "id": 1,
     "image": "https://s3-alpha-sig.figma.com/img/4ef8/5249/815a637e9b42f99b2c18b7d9dddd1079?Expires=1711929600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oFdQUIjzw5IOa1~sJAaPx8mL7QA6~KqdeVJgzE75~OCj4DOrHSMP6SUXlTxLSRX9Xbdu9-T0YnjGWNeK7fJqp7dXrRAg1l4gUZieLO~zpmaGue5lz9a3QN90n2Ox71E8C2uB7nKqLx~H88BDLpbvqdefSz0Rrz-E8ESrFvTLwSJwJDZyZdC-wsro9BtYj0I1ZHCsAPPmWY0Gm~oKxA03bfZ7dfy80-JAZm5EKPYMnSBkkxhFVaZVk4buHQVQf9pmwWfB~nAX7Vr557314rep8Q~RRsqWur8XnWrJVmaFGECwRFAImfdUI7pniYjx39FJuTtjeY8F4WDwWh8IyltwaQ__",
-    "title": "Substance: Albert Hofmann's LSD, The",
+    "title": "Substance: Albert Hofmann's ",
     "date": "14-Mar-2024",
     "location": "72 Londonderry Parkway",
     "price": 253986,
@@ -38,7 +38,7 @@
   {
     "id": 5,
     "image": "http://dummyimage.com/182x100.png/5fa2dd/ffffff",
-    "title": "Journey to the Sun (Günese yolculuk)",
+    "title": "Journey to the Sun ",
     "date": "28-May-2023",
     "location": "3 Oneill Street",
     "price": 218353,
@@ -101,7 +101,7 @@
   {
     "id": 12,
     "image": "http://dummyimage.com/207x100.png/ff4444/ffffff",
-    "title": "Color of Paradise, The (Rang-e khoda)",
+    "title": "Color of Paradise, ",
     "date": "19-Nov-2023",
     "location": "28 Sycamore Trail",
     "price": 284351,
@@ -146,7 +146,7 @@
   {
     "id": 17,
     "image": "http://dummyimage.com/197x100.png/ff4444/ffffff",
-    "title": "Night Across the Street (La noche de enfrente)",
+    "title": "Night Across the Street ",
     "date": "14-May-2023",
     "location": "16 Miller Alley",
     "price": 200640,
@@ -164,7 +164,7 @@
   {
     "id": 19,
     "image": "http://dummyimage.com/222x100.png/cc0000/ffffff",
-    "title": "Asterix & Obelix: God Save Britannia (Astérix et Obélix: Au service de Sa Majesté)",
+    "title": "Asterix & Obelix",
     "date": "04-Feb-2024",
     "location": "1073 Hagan Trail",
     "price": 243863,

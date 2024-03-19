@@ -13,10 +13,10 @@ const CarouselCard = ({
   className: string;
 }) => {
   return (
-    <div className='flex gap-6'>
+    <div className='flex'>
       <Swiper
         slidesPerView={4}
-        spaceBetween={50}
+        spaceBetween={24}
         navigation={true}
         modules={[Navigation]}
       >
