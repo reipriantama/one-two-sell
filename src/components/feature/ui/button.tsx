@@ -9,12 +9,13 @@ const Button = (props: any) => {
 
   return (
     // sebaiknya menggunakan logic switchcase
-      <button
-        className={`rounded-[4px] ${buttonClassName}`}
-        onClick={props.onClick}
-      >
-        <div>{props.buttonText}</div>
-      </button>
+    <button
+      className={`flex items-center justify-center rounded-[4px] ${buttonClassName}`}
+      onClick={props.onClick}
+    >
+      <div>{props.buttonText}</div>
+      <div>{props.icon}</div>
+    </button>
   );
 };
 

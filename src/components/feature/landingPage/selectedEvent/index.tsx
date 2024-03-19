@@ -1,6 +1,6 @@
-import CarouselCard from '../../ui/carouselCard';
+import CarouselCard from '../../ui/carousel/carouselCard';
 
-const SelectedEvent = () => {
+const SelectedEvent = ({ eventData }: { eventData: any }) => {
   return (
     <div className='px-12 pb-12'>
       <div className='flex justify-between items-end mb-6'>
@@ -8,7 +8,7 @@ const SelectedEvent = () => {
         {/* link ke halaman lihat semua */}
         <div className='text-sm text-[#757575] font-medium'>Lihat Semua</div>
       </div>
-      <CarouselCard />
+      <CarouselCard eventData={eventData} className=''/>
     </div>
   );
 };

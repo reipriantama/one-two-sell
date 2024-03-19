@@ -8,6 +8,27 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+.swiper {
+  position: relative;
+  z-index: 10;
+}
+
+.swiper-button-prev {
+  transform: translateX(-75%) translateY(-175%);
+  z-index: 20;
+}
+
+.swiper-button-next {
+  transform: translateX(75%) translateY(-175%);
+  z-index: 20;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: black;
+  border-radius: 100%;
+}
+
 /* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
