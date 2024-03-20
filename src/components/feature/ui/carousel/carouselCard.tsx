@@ -23,10 +23,12 @@ const CarouselCard = ({
   return (
     <div className='flex'>
       <Swiper
-        slidesPerView={4}
+        slidesPerView={4.5}
         spaceBetween={24}
         navigation={true}
         modules={[Navigation]}
+        slidesOffsetBefore={48}
+        slidesOffsetAfter={48}
         className=''
       >
         {eventData?.map((data: any, index: number) => (
