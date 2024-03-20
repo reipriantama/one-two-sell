@@ -11,15 +11,26 @@ const TitleCarousel = () => {
       <Swiper
         slidesPerView={1}
         spaceBetween={0}
-        navigation={true}
+        navigation={{
+          nextEl: '.next-navigation',
+          prevEl: '.prev-navigation',
+        }}
         pagination={true}
         modules={[Navigation, Pagination]}
         className=' w-full h-[360px] rounded-xl'
+        onInit={(swiper: any) => {
+          swiper.params.navigation.prevEl = '.prev-navigation';
+          swiper.params.navigation.nextEl = '.next-navigation';
+          swiper.navigation.init();
+          swiper.navigation.update();
+        }}
       >
         <SwiperSlide className='bg-[#E0E0E0]'>Title Carousel</SwiperSlide>
         <SwiperSlide className='bg-[#6d2c2c]'>Title Carousel</SwiperSlide>
         <SwiperSlide className='bg-[#56d2dd]'>Title Carousel</SwiperSlide>
       </Swiper>
+      <div className='next-navigation'>Next</div>
+      <div className='prev-navigation'>Prev</div>
     </div>
   );
 };
