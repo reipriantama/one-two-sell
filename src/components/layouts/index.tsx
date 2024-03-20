@@ -6,10 +6,10 @@ const Layout = (props: any) => {
   return (
     <>
       <Head>
-        <title>All Event</title>
+        <title>{props.title}</title>
       </Head>
       <div className=''>
-        <Navbar />
+        <Navbar hidden={props.hidden} />
         <div className={` ${props.className}`}>{props.children}</div>
         <Footer />
       </div>

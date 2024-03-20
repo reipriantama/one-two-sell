@@ -5,7 +5,7 @@ import { MdOutlineLocationOn } from 'react-icons/md';
 const DetailCard = () => {
   return (
     <div
-      className='xl:w-[432px]
+      className='2xl:w-[432px]
     border-2 rounded-xl p-6'
     >
       <div className='text-xl text-navy-blue font-semibold mb-9'>

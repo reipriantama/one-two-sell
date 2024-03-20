@@ -2,9 +2,9 @@ const Description = () => {
   return (
     <div className='space-y-12'>
       <div className='w-full bg-[#E0E0E0] h-[306px] rounded-xl'></div>
-      <div className='space-y-6'>
+      <div className='space-y-4'>
         <div className='text-2xl font-semibold'>Deskripsi</div>
-        <p className='text-sm text-[#667085]'>
+        <p className='text-justify text-[#667085] leading-7'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut

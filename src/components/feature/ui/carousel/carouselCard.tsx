@@ -4,14 +4,22 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
+import { EventDataType } from '@/types/eventData.type';
 
 const CarouselCard = ({
   eventData,
   className,
 }: {
-  eventData: any;
+  eventData: EventDataType[];
   className: string;
 }) => {
+  const formatPriceToRupiah = (price: number): string => {
+    const formattedPrice = new Intl.NumberFormat('id-ID', {
+      style: 'currency',
+      currency: 'IDR',
+    }).format(price);
+    return formattedPrice;
+  };
   return (
     <div className='flex'>
       <Swiper
@@ -19,6 +27,7 @@ const CarouselCard = ({
         spaceBetween={24}
         navigation={true}
         modules={[Navigation]}
+        className=''
       >
         {eventData?.map((data: any, index: number) => (
           <SwiperSlide className='' key={index}>
@@ -28,7 +37,7 @@ const CarouselCard = ({
                 alt='logo'
                 width={318}
                 height={240}
-                className='rounded-xl bg-gray-500 h-[240px] w-[318px] object-cover'
+                className='rounded-xl bg-gray-500 h-[240px] w-full object-cover'
               />
             </div>
             <div className='flex flex-col gap-1 text-[#4A62A2] font-semibold mb-3'>
@@ -39,7 +48,7 @@ const CarouselCard = ({
               </div>
             </div>
             <div className={`text-lg text-[#4A62A2] font-bold ${className}`}>
-              {data.price}
+              {formatPriceToRupiah(data.price)}
             </div>
           </SwiperSlide>
         ))}

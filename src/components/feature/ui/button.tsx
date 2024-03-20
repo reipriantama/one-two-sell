@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const Button = (props: any) => {
   const buttonClassName = `py-3 ${
     props.outline ? 'border-[1px] border-navy-blue text-navy-blue' : ''
@@ -9,13 +11,26 @@ const Button = (props: any) => {
 
   return (
     // sebaiknya menggunakan logic switchcase
-    <button
-      className={`flex items-center justify-center rounded-[4px] ${buttonClassName}`}
-      onClick={props.onClick}
-    >
-      <div>{props.buttonText}</div>
-      <div>{props.icon}</div>
-    </button>
+    <div>
+      {props.link ? (
+        <Link
+          href={props.link}
+          className={`flex items-center justify-center rounded-[4px] ${buttonClassName}`}
+          onClick={props.onClick}
+        >
+          <div>{props.buttonText}</div>
+          <div>{props.icon}</div>
+        </Link>
+      ) : (
+        <button
+          className={`flex items-center justify-center rounded-[4px] ${buttonClassName}`}
+          onClick={props.onClick}
+        >
+          <div>{props.buttonText}</div>
+          <div>{props.icon}</div>
+        </button>
+      )}
+    </div>
   );
 };
 
