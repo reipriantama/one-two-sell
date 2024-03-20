@@ -17,12 +17,9 @@ const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
-    <div>
-      <Head>
-        <title>Home</title>
-      </Head>
-      <Layout>
-        <FilterBar />
+    <>
+      <Layout title='Home'>
+        {/* <FilterBar /> */}
         <TitleCarousel />
         <SelectedEvent eventData={eventData} />
         <BestEvent eventData={eventData} />
@@ -32,6 +29,7 @@ export default function Home() {
         <PopularCity eventData={eventData} />
         <div className='flex justify-center pb-12'>
           <Button
+            link='/event'
             buttonText='Lihat ke event lainnya'
             outline
             className='px-9 font-semibold'
@@ -39,6 +37,6 @@ export default function Home() {
           />
         </div>
       </Layout>
-    </div>
+    </>
   );
 }
