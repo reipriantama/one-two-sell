@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { IoClose } from 'react-icons/io5';
 
-const UserTransactionCard = () => {
+const UserCard = () => {
   const cardData = [
     {
       id: 1,
@@ -131,4 +131,4 @@ const UserTransactionCard = () => {
   );
 };
 
-export default UserTransactionCard;
+export default UserCard;

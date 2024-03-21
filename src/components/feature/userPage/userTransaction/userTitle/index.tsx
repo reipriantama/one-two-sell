@@ -7,10 +7,10 @@ import {
 } from '@/components/feature/ui/select';
 import React from 'react';
 
-const UserTransactionHistory = () => {
+const UserTitle = (props: any) => {
   return (
     <div className='flex justify-between'>
-      <p className='text-2xl font-semibold'>Riwayat Transaksi</p>
+      <p className='text-2xl font-semibold'>{props.text}</p>
       <div className='flex items-center'>
         <label htmlFor='category' className='text-sm text-[#141414]'>
           Status
@@ -31,4 +31,4 @@ const UserTransactionHistory = () => {
   );
 };
 
-export default UserTransactionHistory;
+export default UserTitle;

@@ -13,7 +13,7 @@ const Button = (props: any) => {
       {props.link ? (
         <Link
           href={props.link}
-          className={`flex items-center justify-center rounded-[4px] ${buttonClassName}`}
+          className={`flex items-center rounded-[4px] ${buttonClassName}`}
           onClick={props.onClick}
         >
           <div>{props.buttonText}</div>

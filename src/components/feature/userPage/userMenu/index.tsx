@@ -23,10 +23,12 @@ const UserMenu = () => {
       <Button
         buttonText='Riwayat Transaksi'
         className='w-full py-3 px-2 font-semibold border-b-2'
+        link='/user/transaction-history'
       />
       <Button
         buttonText='E-Tiket Kamu'
         className='w-full py-3 px-2 font-semibold border-b-2'
+        link='/user/ticket'
       />
       <Button
         buttonText='Ganti Sandi'
