@@ -4,7 +4,7 @@ import Button from '../../ui/button';
 const PersonalInformation = () => {
   return (
     <div className='space-y-6'>
-      <div className='flex justify-between'>
+      <div className='flex justify-between gap-6'>
         <div className='space-y-1'>
           <div className='text-2xl font-semibold'>Informasi Pribadi</div>
           <div className='text-xs text-[#757575] font-medium'>
@@ -15,8 +15,8 @@ const PersonalInformation = () => {
           <div className='text-sm text-[#757575]'>Sisa waktu pembelian</div>
         </div>
       </div>
-      <div className='flex justify-between'>
-        <div className='space-y-1 w-[432px]'>
+      <div className='flex justify-between gap-6'>
+        <div className='space-y-1 w-[432px] flex-1'>
           <label htmlFor='firsname' className='text-[#2D4074] '>
             Nama Depan
           </label>
@@ -28,7 +28,7 @@ const PersonalInformation = () => {
             className='border-[1px] border-[#E3E3E3] rounded-[4px] p-4 text-base w-full'
           />
         </div>
-        <div className='space-y-1 w-[432px]'>
+        <div className='space-y-1 w-[432px] flex-1'>
           <label htmlFor='lastname' className='text-[#2D4074] '>
             Nama Belakang
           </label>
@@ -41,8 +41,8 @@ const PersonalInformation = () => {
           />
         </div>
       </div>
-      <div className='flex justify-between'>
-        <div className='space-y-1 w-[432px]'>
+      <div className='flex justify-between gap-6'>
+        <div className='space-y-1 w-[432px] flex-1'>
           <label htmlFor='email' className='text-[#2D4074] '>
             Email
           </label>
@@ -57,7 +57,7 @@ const PersonalInformation = () => {
             E-Ticket akan dikirimkan ke email anda
           </p>
         </div>
-        <div className='space-y-1 w-[432px]'>
+        <div className='space-y-1 w-[432px] flex-1'>
           <label htmlFor='phone' className='text-[#2D4074] '>
             Nama Belakang
           </label>
@@ -70,13 +70,21 @@ const PersonalInformation = () => {
           />
         </div>
       </div>
-      <div className='flex justify-between'>
-        <Button
-          buttonText='Kembali'
-          className='w-[432px] text-[#757575]'
-          outline
-        />
-        <Button buttonText='Selanjutnya' className='w-[432px]' primary />
+      <div className='flex justify-between gap-6'>
+        <div className='flex-1'>
+          <Button
+            buttonText='Kembali'
+            className='w-full text-[#757575] flex justify-center'
+            outline
+          />
+        </div>
+        <div className='flex-1'>
+          <Button
+            buttonText='Selanjutnya'
+            className='w-full flex justify-center'
+            primary
+          />
+        </div>
       </div>
     </div>
   );

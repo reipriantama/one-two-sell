@@ -15,38 +15,38 @@ const PaymentMethod = () => {
           <div className='text-sm text-[#757575]'>Sisa waktu pembelian</div>
         </div>
       </div>
-      <div className='flex justify-between'>
-        <div className='space-y-6'>
+      <div className='flex justify-between gap-6'>
+        <div className='space-y-6 flex-1'>
           <Button
             buttonText='Credit/Debit Card'
-            className='w-[432px] text-[#757575] '
+            className='w-full text-[#757575] '
             outline
           />
           <Button
             buttonText='Virtual Account'
-            className='w-[432px] text-[#757575] '
+            className='w-full text-[#757575] '
             outline
           />
           <Button
             buttonText='Go-Pay'
-            className='w-[432px] text-[#757575] '
+            className='w-full text-[#757575] '
             outline
           />
         </div>
-        <div className='space-y-6'>
+        <div className='space-y-6 flex-1'>
           <Button
             buttonText='Bank Transfer'
-            className='w-[432px] text-[#757575] '
+            className='w-full text-[#757575] '
             outline
           />
           <Button
             buttonText='Virtual Account'
-            className='w-[432px] text-[#757575] '
+            className='w-full text-[#757575] '
             outline
           />
           <Button
             buttonText='Indomaret'
-            className='w-[432px] text-[#757575] '
+            className='w-full text-[#757575] '
             outline
           />
         </div>
@@ -55,13 +55,21 @@ const PaymentMethod = () => {
         <p className='py-6 text-2xl font-semibold'>Konfirmasi Pembayaran</p>
         <div>table</div>
       </div>
-      <div className='flex justify-between'>
-        <Button
-          buttonText='Kembali'
-          className='w-[432px] text-[#757575]'
-          outline
-        />
-        <Button buttonText='Selanjutnya' className='w-[432px]' primary />
+      <div className='flex justify-between gap-6'>
+        <div className='flex-1'>
+          <Button
+            buttonText='Kembali'
+            className='w-full text-[#757575] flex justify-center'
+            outline
+          />
+        </div>
+        <div className='flex-1'>
+          <Button
+            buttonText='Selanjutnya'
+            className='w-full flex justify-center'
+            primary
+          />
+        </div>
       </div>
     </div>
   );

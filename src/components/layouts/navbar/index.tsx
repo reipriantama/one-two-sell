@@ -62,13 +62,13 @@ const Navbar = (props: any) => {
           <div className='flex gap-4'>
             <Button
               buttonText='Daftar'
-              className='w-[121px]'
+              className='w-[121px] flex justify-center text-navy-blue font-semibold'
               outline
               onClick={() => setshowSignUpModal(true)}
             />
             <Button
               buttonText='Masuk'
-              className='w-[121px]'
+              className='w-[121px] flex justify-center font-semibold'
               primary
               onClick={() => setShowLoginModal(true)}
             />

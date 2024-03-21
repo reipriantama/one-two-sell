@@ -55,13 +55,21 @@ const OrderReview = () => {
         <p className='py-6 text-2xl font-semibold'>Konfirmasi Pembayaran</p>
         <div>table</div>
       </div>
-      <div className='flex justify-between'>
-        <Button
-          buttonText='Kembali'
-          className='w-[432px] text-[#757575]'
-          outline
-        />
-        <Button buttonText='Selanjutnya' className='w-[432px]' primary />
+      <div className='flex justify-between gap-6'>
+        <div className='flex-1'>
+          <Button
+            buttonText='Kembali'
+            className='w-full flex justify-center text-[#757575]'
+            outline
+          />
+        </div>
+        <div className='flex-1'>
+          <Button
+            buttonText='Selanjutnya'
+            className='w-full flex justify-center'
+            primary
+          />
+        </div>
       </div>
     </div>
   );
