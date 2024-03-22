@@ -38,7 +38,11 @@ border-2 rounded-xl p-6 space-y-6'
       </div>
 
       <div className='space-y-2'>
-        <Button buttonText='Beli Tiket' className='w-full' primary />
+        <Button
+          buttonText='Beli Tiket'
+          className='w-full flex justify-center'
+          primary
+        />
       </div>
     </div>
   );

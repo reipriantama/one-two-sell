@@ -13,10 +13,10 @@ const Transaction = () => {
     <>
       <Layout hidden className='px-[276px] py-6 space-y-12' title='Transaction'>
         <BannerTitle />
-        <EventInformation />
+        {/* <EventInformation />
         <PersonalInformation />
         <PaymentMethod />
-        <OrderReview />
+        <OrderReview /> */}
       </Layout>
     </>
   );

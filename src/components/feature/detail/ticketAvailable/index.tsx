@@ -60,7 +60,11 @@ const TicketAvailable = () => {
         <p className='text-[#A6A6A6] text-[10px]'>Kelipatan Rp 10.000,-</p>
       </div>
       <div className='space-y-2'>
-        <Button buttonText='Beli Tiket' className='w-full' primary />
+        <Button
+          buttonText='Beli Tiket'
+          className='w-full flex justify-center'
+          primary
+        />
         <div className='flex justify-center text-[10px] text-[#A6A6A6]'>
           Anda punya 3 Voucher Bid
         </div>

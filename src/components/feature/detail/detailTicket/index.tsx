@@ -52,7 +52,11 @@ border-2 rounded-xl p-6 space-y-6'
         </Select>
       </div>
       <div className='space-y-3'>
-        <Button buttonText='Beli Tiket' className='w-full' primary />
+        <Button
+          buttonText='Beli Tiket'
+          className='w-full flex justify-center'
+          primary
+        />
         <div className='flex justify-center text-[10px] text-[#A6A6A6]'>
           Harga belum termasuk pajak dan admin fee
         </div>

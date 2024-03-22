@@ -1,5 +1,12 @@
 import React from 'react';
 import Button from '../../ui/button';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '../../ui/select';
 
 const EventInformation = () => {
   return (
@@ -71,14 +78,63 @@ const EventInformation = () => {
         </div>
         <div className='border-t-[1px] border-[#BABABA]'></div>
         <div className='space-y-3'>
-          <div>table</div>
+          <div>
+            <div className='flex justify-center py-5 px-4 text-[#5D5D5D] font-bold bg-black bg-opacity-5'>
+              <span className='flex-1 flex justify-center'>Jenis Kategori</span>
+              <span className='flex-1 flex justify-center'>
+                Harga per Tiket
+              </span>
+              <span className='flex-1 flex justify-center'>Kuantitas</span>
+              <span className='flex-1 flex justify-center'>Jumlah</span>
+            </div>
+            <div className='flex justify-center items-center py-5 text-xs'>
+              <span className='flex-1 flex justify-start px-4'>
+                General Admission - Early Bird
+              </span>
+              <span className='flex-1 flex justify-end px-4'>Rp 250.000,-</span>
+              <span className='flex-1 flex justify-center px-4'>
+                <Select>
+                  <SelectTrigger className='max-w-min gap-1'>
+                    <SelectValue placeholder='1' />
+                  </SelectTrigger>
+                  <SelectContent className='bg-white text-xs'>
+                    <SelectItem value='1'>1</SelectItem>
+                    <SelectItem value='2'>2</SelectItem>
+                    <SelectItem value='3'>3</SelectItem>
+                  </SelectContent>
+                </Select>
+              </span>
+              <span className='flex-1 flex justify-end px-4'>Rp 750.000,-</span>
+            </div>
+            <div className='flex justify-center items-center py-5 text-xs'>
+              <span className='flex-1 flex justify-start px-4'>VIP</span>
+              <span className='flex-1 flex justify-end px-4'>Rp 550.000,-</span>
+              <span className='flex-1 flex justify-center px-4'>
+                <Select>
+                  <SelectTrigger className='max-w-min gap-1'>
+                    <SelectValue placeholder='1' />
+                  </SelectTrigger>
+                  <SelectContent className='bg-white text-xs'>
+                    <SelectItem value='1'>1</SelectItem>
+                    <SelectItem value='2'>2</SelectItem>
+                    <SelectItem value='3'>3</SelectItem>
+                  </SelectContent>
+                </Select>
+              </span>
+              <span className='flex-1 flex justify-end px-4'>Rp 0</span>
+            </div>
+          </div>
           <p className='text-xs text-[#A6A6A6]'>
             Dengan menekan tombol beli sekarang saya telah membaca dan setuju
             dengan syarat & aturan yang berlaku
           </p>
         </div>
         <div className='space-y-3'>
-          <Button buttonText='Proses Tiket' primary className='w-full' />
+          <Button
+            buttonText='Proses Tiket'
+            primary
+            className='w-full flex justify-center'
+          />
           <p className='flex justify-center text-[10px] text-[#A6A6A6]'>
             Harga belum termasuk pajak dan admin fee
           </p>
