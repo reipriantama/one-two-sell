@@ -3,7 +3,7 @@ import CarouselCard from '../../ui/carousel/carouselCard';
 const RecomendationEvent = ({ eventData }: { eventData: any }) => {
   return (
     <div className=''>
-      <div className=' '>
+      <div className=''>
         <div className='flex justify-between items-end mb-6'>
           <div className='text-2xl font-semibold'>Rekomendasi Event Serupa</div>
           {/* link ke halaman lihat semua */}

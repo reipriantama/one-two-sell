@@ -1,4 +1,3 @@
-import Breadcrumb from '@/components/feature/detail/breadcrumb';
 import BuyTicket from '@/components/feature/detail/buyTicket';
 import Description from '@/components/feature/detail/description';
 import DetailCard from '@/components/feature/detail/detailCard';
@@ -17,7 +16,7 @@ const DetailProductPage = () => {
       <Layout className='p-12 space-y-12' title='Detail'>
         <div className='flex gap-6 '>
           <div className='flex-1'>
-            <Breadcrumb />
+            <div>breadcrumb</div>
             <div className='space-y-12'>
               <Description />
               <TermCondition />
