@@ -1,10 +1,10 @@
 // components/pages/allEvent.tsx
 
-import Layout from '@/components/layouts';
-import FilterTop from '@/components/feature/eventPage/filter';
-import EventCard from '@/components/feature/eventPage/eventCard';
-import Pagination from '@/components/feature/eventPage/pagination';
-import SideBarEvent from '@/components/feature/eventPage/sideBar';
+import Layout from '@/components/layouts/main';
+import FilterTop from '@/components/feature/main/eventPage/filter';
+import EventCard from '@/components/feature/main/eventPage/eventCard';
+import Pagination from '@/components/feature/main/eventPage/pagination';
+import SideBarEvent from '@/components/feature/main/eventPage/sideBar';
 import eventData from '@/data/eventData.json';
 import { EventDataType } from '@/types/eventData.type';
 
