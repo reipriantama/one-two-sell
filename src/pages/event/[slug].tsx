@@ -1,12 +1,12 @@
-import BuyTicket from '@/components/feature/detail/buyTicket';
-import Description from '@/components/feature/detail/description';
-import DetailCard from '@/components/feature/detail/detailCard';
-import DetailTicket from '@/components/feature/detail/detailTicket';
-import RecomendationEvent from '@/components/feature/detail/recomendationEvent';
-import TermCondition from '@/components/feature/detail/termCondition';
-import TicketAvailable from '@/components/feature/detail/ticketAvailable';
-import Button from '@/components/feature/ui/button';
-import Layout from '@/components/layouts';
+import BuyTicket from '@/components/feature/main/detail/buyTicket';
+import Description from '@/components/feature/main/detail/description';
+import DetailCard from '@/components/feature/main/detail/detailCard';
+import DetailTicket from '@/components/feature/main/detail/detailTicket';
+import RecomendationEvent from '@/components/feature/main/detail/recomendationEvent';
+import TermCondition from '@/components/feature/main/detail/termCondition';
+import TicketAvailable from '@/components/feature/main/detail/ticketAvailable';
+import Button from '@/components/ui/button';
+import Layout from '@/components/layouts/main';
 import eventData from '@/data/eventData.json';
 import { MdOutlineChevronRight } from 'react-icons/md';
 

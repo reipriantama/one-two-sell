@@ -1,8 +1,8 @@
-import UserTitle from '@/components/feature/userPage/userTransaction/userTitle';
-import UserCard from '@/components/feature/userPage/userTransaction/userCard';
-import Layout from '@/components/layouts';
+import UserTitle from '@/components/feature/main/userPage/userTransaction/userTitle';
+import UserCard from '@/components/feature/main/userPage/userTransaction/userCard';
+import Layout from '@/components/layouts/main';
 import React from 'react';
-import BreadcrumbUser from '@/components/feature/userPage/userTransaction/breadcrumb';
+import BreadcrumbUser from '@/components/feature/main/userPage/userTransaction/breadcrumb';
 
 const UserTransactionPage = () => {
   return (

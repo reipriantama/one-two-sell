@@ -1,6 +1,6 @@
-import TitleTicketSell from '@/components/feature/userPage/ticketSell/title';
-import BreadcrumbUser from '@/components/feature/userPage/userTransaction/breadcrumb';
-import Layout from '@/components/layouts';
+import TitleTicketSell from '@/components/feature/main/userPage/ticketSell/title';
+import BreadcrumbUser from '@/components/feature/main/userPage/userTransaction/breadcrumb';
+import Layout from '@/components/layouts/main';
 import React from 'react';
 
 const ticketSell = () => {

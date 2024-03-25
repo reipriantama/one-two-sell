@@ -1,7 +1,7 @@
-import UserBid from '@/components/feature/userPage/userBid';
-import UserMenu from '@/components/feature/userPage/userMenu';
-import UserProfile from '@/components/feature/userPage/userProfile';
-import Layout from '@/components/layouts';
+import UserBid from '@/components/feature/main/userPage/userBid';
+import UserMenu from '@/components/feature/main/userPage/userMenu';
+import UserProfile from '@/components/feature/main/userPage/userProfile';
+import Layout from '@/components/layouts/main';
 import React from 'react';
 
 const UserPage = () => {
