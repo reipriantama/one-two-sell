@@ -1,8 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
 import NavbarDashboard from './navbar';
-import Footer from '../main/footer';
-import FooterDashboard from './footer';
+import SidebarDashboard from './sidebar';
 
 const LayoutDashboard = (props: any) => {
   return (
@@ -10,10 +9,14 @@ const LayoutDashboard = (props: any) => {
       <Head>
         <title>Dashboard</title>
       </Head>
-      <div>
-        <NavbarDashboard />
-        <div className={`${props.className}`}>{props.children} </div>
-        <FooterDashboard />
+      <div className=' w-screen h-screen overflow-hidden'>
+        <div className='relative w-full h-screen overflow-auto'>
+          <NavbarDashboard />
+          <div className='flex'>
+            <SidebarDashboard />
+            <div className={`${props.className}`}>{props.children} </div>
+          </div>
+        </div>
       </div>
     </>
   );

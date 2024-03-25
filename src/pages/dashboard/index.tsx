@@ -22,10 +22,7 @@ const Dashboard = () => {
           height={108}
         />
       </div>
-      <LoginCard
-        className='absolute top-9 right-9'
-        
-      />
+      <LoginCard className='absolute top-9 right-9' />
     </div>
   );
 };
