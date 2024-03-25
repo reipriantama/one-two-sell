@@ -4,7 +4,7 @@ import React from 'react';
 const AccountListPage = () => {
   return (
     <div>
-      <LayoutDashboard title='Account List' className='bg-[#F8F8F8] flex-1'>
+      <LayoutDashboard title='Account List' className='bg-[#F8F8F8] flex-12'>
         <div>this is AccounListPage</div>
       </LayoutDashboard>
     </div>
