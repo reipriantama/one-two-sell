@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Button from '../../../../ui/button';
+import Button from '../../../../ui/main/button';
 import { IoClose } from 'react-icons/io5';
 
 const UserMenu = () => {

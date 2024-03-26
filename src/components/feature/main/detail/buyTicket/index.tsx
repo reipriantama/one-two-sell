@@ -4,8 +4,8 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import Button from '../../../../ui/button';
+} from '@/components/ui/main/select';
+import Button from '../../../../ui/main/button';
 
 const BuyTicket = () => {
   return (

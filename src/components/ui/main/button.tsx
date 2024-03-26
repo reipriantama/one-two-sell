@@ -1,7 +1,9 @@
 import Link from 'next/link';
 
 const Button = (props: any) => {
-  const buttonClassName = `py-3 ${props.outline ? 'border-[1px]  ' : ''} ${
+  const buttonClassName = `py-3 ${
+    props.outline ? 'border-[1px] border-[#4A62A2] text-[#4A62A2]' : ''
+  } ${
     props.primary
       ? 'bg-gradient-to-b from-[#4A62A2] to-[#2D4074] text-white'
       : ''
@@ -13,7 +15,7 @@ const Button = (props: any) => {
       {props.link ? (
         <Link
           href={props.link}
-          className={`flex items-center rounded-[4px] ${buttonClassName}`}
+          className={`flex items-center rounded-[4px]  ${buttonClassName}`}
           onClick={props.onClick}
         >
           <div>{props.buttonText}</div>
@@ -21,7 +23,7 @@ const Button = (props: any) => {
         </Link>
       ) : (
         <button
-          className={`flex items-center rounded-[4px] ${buttonClassName}`}
+          className={`flex items-center rounded-[4px]  ${buttonClassName}`}
           onClick={props.onClick}
         >
           <div>{props.buttonText}</div>

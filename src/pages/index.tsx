@@ -9,7 +9,7 @@ import BestEvent from '@/components/feature/main/landingPage/bestEvent';
 import eventData from '@/data/eventData.json';
 import PopularWeek from '@/components/feature/main/landingPage/popularWeek';
 import PopularCity from '@/components/feature/main/landingPage/popularCity';
-import Button from '@/components/ui/button';
+import Button from '@/components/ui/main/button';
 import { MdOutlineChevronRight } from 'react-icons/md';
 import Head from 'next/head';
 
@@ -32,7 +32,7 @@ export default function Home() {
             link='/event'
             buttonText='Lihat ke event lainnya'
             outline
-            className='px-9 font-semibold'
+            className='px-9 font-semibold '
             icon={<MdOutlineChevronRight className='size-' />}
           />
         </div>

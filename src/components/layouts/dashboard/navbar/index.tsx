@@ -4,7 +4,7 @@ import { AiOutlineSearch, AiTwotoneBell } from 'react-icons/ai';
 
 const NavbarDashboard = () => {
   return (
-    <div className='flex'>
+    <div className='flex bg-white'>
       <div className='w-[282px] h-[72px] p-5 shadow-sm'>
         <Image
           src='/assets/dashboard/layout/navbar/oneTwoSellLogo.svg'

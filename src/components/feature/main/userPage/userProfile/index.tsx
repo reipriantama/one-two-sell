@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import Button from '../../../../ui/button';
+import Button from '../../../../ui/main/button';
 
 const UserProfile = () => {
   return (
@@ -19,7 +19,7 @@ const UserProfile = () => {
           <p className='text-[34px] font-semibold'>John Doe</p>
           <div>
             <Image
-              src='assets/user/userProfile/verified.svg'
+              src='assets/main/user/userProfile/verified.svg'
               alt='logo'
               width={44}
               height={44}

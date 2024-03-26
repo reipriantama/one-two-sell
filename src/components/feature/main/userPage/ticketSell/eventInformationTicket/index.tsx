@@ -1,11 +1,11 @@
-import Button from '@/components/ui/button';
+import Button from '@/components/ui/main/button';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
+} from '@/components/ui/main/select';
 import React from 'react';
 
 const EventInformationTicket = () => {

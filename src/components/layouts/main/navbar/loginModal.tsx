@@ -1,4 +1,4 @@
-import Button from '@/components/ui/button';
+import Button from '@/components/ui/main/button';
 import Image from 'next/image';
 import Link from 'next/link';
 import { IoClose } from 'react-icons/io5';
@@ -56,7 +56,7 @@ const LoginModal = ({ closeModal }: { closeModal: () => void }) => {
           <div className='space-y-4'>
             <Button
               buttonText='Login'
-              className='w-full text-white bg-[#4A62A2]'
+              className='w-full justify-center text-white bg-[#4A62A2]'
             />
             <p className='flex justify-center text-navy-blue'>
               Pengguna baru ?
@@ -72,7 +72,7 @@ const LoginModal = ({ closeModal }: { closeModal: () => void }) => {
             </p>
             <Button
               buttonText='Masuk dengan Google'
-              className='w-full text-white bg-[#4A62A2]'
+              className='w-full justify-center text-white bg-[#4A62A2]'
             />
           </div>
         </div>

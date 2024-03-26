@@ -1,4 +1,4 @@
-import Button from '@/components/ui/button';
+import Button from '@/components/ui/main/button';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -38,7 +38,7 @@ const Navbar = (props: any) => {
         <div className='flex gap-6'>
           <Link href='/'>
             <Image
-              src='/assets/layout/navbar/oneTwoSellLogo.svg'
+              src='/assets/main/layout/navbar/oneTwoSellLogo.svg'
               alt='logo'
               width={48}
               height={48}

@@ -1,12 +1,12 @@
 import React from 'react';
-import Button from '../../../../ui/button';
+import Button from '../../../../ui/main/button';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '../../../../ui/select';
+} from '../../../../ui/main/select';
 
 const EventInformation = () => {
   return (

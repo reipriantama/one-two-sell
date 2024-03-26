@@ -1,4 +1,4 @@
-import Button from '@/components/ui/button';
+import Button from '@/components/ui/main/button';
 import React, { useState } from 'react';
 import ListEvent from '../listEvent';
 import EventInformationTicket from '../eventInformationTicket';

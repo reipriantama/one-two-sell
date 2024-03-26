@@ -1,6 +1,6 @@
 import React from 'react';
 import { IoFootballSharp } from 'react-icons/io5';
-import Select from '../../../../ui/input';
+import Select from '../../../../ui/main/input';
 
 const FilterBar = () => {
   const optionSport = [

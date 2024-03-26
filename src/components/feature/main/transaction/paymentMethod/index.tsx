@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../../../../ui/button';
+import Button from '../../../../ui/main/button';
 
 const PaymentMethod = () => {
   return (
@@ -94,14 +94,14 @@ const PaymentMethod = () => {
         <div className='flex-1'>
           <Button
             buttonText='Kembali'
-            className='w-full text-[#757575] flex justify-center'
+            className='w-full justify-center'
             outline
           />
         </div>
         <div className='flex-1'>
           <Button
             buttonText='Selanjutnya'
-            className='w-full flex justify-center'
+            className='w-full justify-center'
             primary
           />
         </div>

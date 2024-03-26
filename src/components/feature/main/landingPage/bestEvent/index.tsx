@@ -1,4 +1,4 @@
-import CarouselCard from '../../../../ui/carousel/carouselCard';
+import CarouselCard from '../../../../ui/main/carousel/carouselCard';
 
 const BestEvent = ({ eventData }: { eventData: any }) => {
   return (

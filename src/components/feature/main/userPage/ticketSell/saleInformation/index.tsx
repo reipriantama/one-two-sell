@@ -1,6 +1,6 @@
 import React from 'react';
 import FormSale from './formSale';
-import Button from '@/components/ui/button';
+import Button from '@/components/ui/main/button';
 
 const SaleInformation = () => {
   return (

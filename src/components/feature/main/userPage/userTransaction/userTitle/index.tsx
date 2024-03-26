@@ -4,7 +4,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
+} from '@/components/ui/main/select';
 import React from 'react';
 
 const UserTitle = (props: any) => {

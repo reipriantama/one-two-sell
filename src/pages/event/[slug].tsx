@@ -5,7 +5,7 @@ import DetailTicket from '@/components/feature/main/detail/detailTicket';
 import RecomendationEvent from '@/components/feature/main/detail/recomendationEvent';
 import TermCondition from '@/components/feature/main/detail/termCondition';
 import TicketAvailable from '@/components/feature/main/detail/ticketAvailable';
-import Button from '@/components/ui/button';
+import Button from '@/components/ui/main/button';
 import Layout from '@/components/layouts/main';
 import eventData from '@/data/eventData.json';
 import { MdOutlineChevronRight } from 'react-icons/md';

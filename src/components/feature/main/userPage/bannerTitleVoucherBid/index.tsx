@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Button from '../../../../ui/button';
+import Button from '../../../../ui/main/button';
 import PaymentMethod from '../../transaction/paymentMethod';
 import OrderReview from '../../transaction/orderReview';
 

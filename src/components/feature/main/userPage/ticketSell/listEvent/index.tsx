@@ -4,8 +4,8 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import Button from '@/components/ui/button';
+} from '@/components/ui/main/select';
+import Button from '@/components/ui/main/button';
 import React from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 
