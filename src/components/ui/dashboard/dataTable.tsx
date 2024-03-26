@@ -7,6 +7,8 @@ import {
   getCoreRowModel,
   useReactTable,
 } from '@tanstack/react-table';
+import Link from 'next/link';
+import PaginationDashboard from './paginationDashboard';
 
 type DataTableProps = {
   dataTable: any[];
@@ -14,7 +16,8 @@ type DataTableProps = {
 
 const DataTable: React.FC<DataTableProps> = ({ dataTable }) => {
   const [data, setData] = useState(() => [...dataTable]);
-  console.log(dataTable);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(10);
 
   const columnHelper = createColumnHelper<any>();
 
@@ -71,17 +74,52 @@ const DataTable: React.FC<DataTableProps> = ({ dataTable }) => {
       columnHelper.accessor('actions', {
         header: 'Detail',
         cell: (info) => {
-          return <p>icon</p>;
+          function convertToSlug(data: string) {
+            return data
+              .toLowerCase()
+              .toLowerCase()
+              .replace(/ /g, '-')
+              .replace(/[^\w-]+/g, '');
+          }
+
+          const slugName = convertToSlug(
+            info.row.original.firstName + '-' + info.row.original.lastName
+          );
+
+          return <Link href={`/dashboard/account-list/${slugName}`}>icon</Link>;
         },
       }),
     ];
   }, []);
 
+  const paginatedData = useMemo(() => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    return data.slice(startIndex, endIndex);
+  }, [data, currentPage, itemsPerPage]);
+
+  const pageCount = Math.ceil(data.length / itemsPerPage);
+
   const table = useReactTable({
-    data: dataTable ?? [],
+    data: paginatedData ?? [],
     columns: useMemoColumn,
     getCoreRowModel: getCoreRowModel(),
   });
+
+  const goToNextPage = () => {
+    setCurrentPage((prevPage) => Math.min(prevPage + 1, pageCount));
+  };
+
+  const goToPrevPage = () => {
+    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
+  };
+
+  const handleChangeItemsPerPage = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    setItemsPerPage(Number(event.target.value));
+    setCurrentPage(1);
+  };
 
   return (
     <div>
@@ -124,6 +162,15 @@ const DataTable: React.FC<DataTableProps> = ({ dataTable }) => {
           ))}
         </tbody>
       </table>
+      <PaginationDashboard
+        itemsPerPage={itemsPerPage}
+        pageCount={pageCount}
+        handleChangeItemsPerPage={handleChangeItemsPerPage}
+        goToPrevPage={goToPrevPage}
+        goToNextPage={goToNextPage}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
     </div>
   );
 };

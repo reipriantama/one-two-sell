@@ -19,15 +19,11 @@ const AccountListPage = () => {
 
   return (
     <div>
-      <LayoutDashboard
-        title='Account List'
-        className='bg-[#F8F8F8] flex-1 px-5 py-2 space-y-5'
-      >
-        <TitleDashboard title='List Akun' buttonText='Add Account'>
-          <ButtonTitle buttonText='Add Account' />
+      <LayoutDashboard className='bg-[#F8F8F8] flex-1 px-5 py-2 space-y-5'>
+        <TitleDashboard title='List Akun'>
+          {/* <ButtonTitle buttonText='Add Account' /> */}
         </TitleDashboard>
         <DataTable dataTable={data} />
-        <div>this is AccounListPage</div>
       </LayoutDashboard>
     </div>
   );
