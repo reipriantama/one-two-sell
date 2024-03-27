@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 
-const BreadCrumbDashboard = () => {
+const BreadCrumbDashboard = (props: any) => {
   const { query } = useRouter();
   const isString = (text: any): text is string => {
     return typeof text === 'string';
@@ -19,7 +19,7 @@ const BreadCrumbDashboard = () => {
   return (
     <div className='flex gap-1 items-center'>
       <Link href={'/dashboard/account-list'} className='text-[#989898] text-sm'>
-        List Akun
+        {props.breadCrumbText}
       </Link>
       <Image
         src={'/assets/dashboard/accountListDetail/arrowRight.svg'}

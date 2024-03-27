@@ -1,19 +1,16 @@
 import TitleDashboard from '@/components/feature/dashboard/titleDashboard';
 import LayoutDashboard from '@/components/layouts/dashboard';
-import ButtonTitle from '@/components/ui/dashboard/button';
-import React, { useMemo } from 'react';
-
-import { tableData, Person } from '@/data/tableData';
 import DataTable from '@/components/ui/dashboard/dataTable';
+import React, { useMemo } from 'react';
+import { tableData, Person } from '@/data/tableData';
 import { ColumnDef, createColumnHelper } from '@tanstack/react-table';
 import Link from 'next/link';
 import { IoMdInformationCircleOutline } from 'react-icons/io';
 import { FaTrash } from 'react-icons/fa';
 
-const AccountListPage = () => {
+const PaymentListPage = () => {
   const data = tableData;
 
-  console.log(data);
   const columnHelper = createColumnHelper<any>();
 
   const useMemoColumn = useMemo<ColumnDef<any>[]>(() => {
@@ -48,21 +45,24 @@ const AccountListPage = () => {
         header: 'Nomor Handphone',
         cell: (info) => info.getValue(),
       }),
-
-      columnHelper.accessor('status', {
-        header: 'Status',
+      columnHelper.accessor('payment', {
+        header: 'Pembayaran',
         cell: (info) => {
-          const value = info.getValue();
-          return value ? (
-            <div className='bg-[#4A62A2] flex justify-center text-white w-[149px] px-3 py-2 text-xs rounded-2xl font-bold'>
-              Verified Account
-            </div>
-          ) : (
-            '-'
-          );
+          const value = info.getValue() as number;
+          return new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+          }).format(value);
         },
       }),
-
+      columnHelper.accessor('paymentProcess', {
+        header: 'Proses Pembayaran',
+        cell: (info) => info.getValue(),
+      }),
+      columnHelper.accessor('datePayment', {
+        header: 'Tanggal Pengajuan',
+        cell: (info) => info.getValue(),
+      }),
       columnHelper.accessor('actions', {
         header: 'Detail',
         cell: (info) => {
@@ -80,12 +80,9 @@ const AccountListPage = () => {
 
           return (
             <div className='flex gap-2'>
-              <Link href={`/dashboard/account-list/${slugName}`}>
+              <Link href={`/dashboard/payment/${slugName}`}>
                 <IoMdInformationCircleOutline className='size-4 text-[#129555]' />
               </Link>
-              <div>
-                <FaTrash className='size-4 text-[#D10D0D]' />
-              </div>
             </div>
           );
         },
@@ -94,15 +91,15 @@ const AccountListPage = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <LayoutDashboard className='bg-[#F8F8F8] flex-1 px-5 py-2 space-y-5'>
-        <TitleDashboard title='List Akun'>
+        <TitleDashboard title='Pembayaran'>
           {/* <ButtonTitle buttonText='Add Account' /> */}
         </TitleDashboard>
-        <DataTable dataTable={data} column={useMemoColumn} />
+        <DataTable column={useMemoColumn} dataTable={data} />
       </LayoutDashboard>
-    </div>
+    </>
   );
 };
 
-export default AccountListPage;
+export default PaymentListPage;

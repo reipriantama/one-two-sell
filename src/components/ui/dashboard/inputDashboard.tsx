@@ -7,7 +7,7 @@ const InputDashboard = (props: any) => {
         {props.labelText}
       </label>
       <input
-        type='text'
+        type={props.inputType}
         id='name'
         name='name'
         placeholder={props.placeholderText}

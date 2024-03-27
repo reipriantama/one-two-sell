@@ -9,8 +9,13 @@ export type Person = {
   phone: string;
   payment: number;
   paymentProcess: string;
-  date: string;
+  datePayment: string;
   detail: string;
+  status: boolean;
+  typeEvent: string;
+  eventName: string;
+  dateEvent: string;
+  genre: string;
 };
 
 const range = (len: number) => {
@@ -28,6 +33,15 @@ export const tableData: Person[] = [...Array(30)].map(() => ({
   phone: faker.phone.number(),
   payment: parseFloat(faker.finance.amount()),
   paymentProcess: faker.finance.transactionType(),
-  date: faker.date.recent().toDateString(),
+  datePayment: faker.date.recent().toDateString(),
   detail: faker.lorem.paragraph(),
+  status: faker.datatype.boolean(),
+  typeEvent: faker.helpers.arrayElement(['Festival', 'Seminar']),
+  eventName: faker.helpers.arrayElement([
+    'Parade Sihir - Bandung',
+    'Parade Musik - Jakarta',
+  ]),
+  dateEvent: faker.date.future().toDateString(),
+  genre: faker.music.genre(),
+  format: faker.helpers.arrayElement(['Online', 'Offline']),
 }));

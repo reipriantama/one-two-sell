@@ -1,17 +1,21 @@
 import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 
 const SideBarDashboard = () => {
+  const router = useRouter();
+
   const titleSideAccount = [
     {
       icon: '/assets/dashboard/layout/sidebar/iconAccount.svg',
       title: 'List Akun',
-      link: '/dashboard',
+      link: '/dashboard/account-list',
     },
     {
       icon: '/assets/dashboard/layout/sidebar/iconPembayaran.svg',
       title: 'Pembayaran',
-      link: '/dashboard',
+      link: '/dashboard/payment',
     },
   ];
 
@@ -19,27 +23,27 @@ const SideBarDashboard = () => {
     {
       icon: '/assets/dashboard/layout/sidebar/iconAllEvent.svg',
       title: 'Seluruh Event',
-      link: '/dashboard',
+      link: '/dashboard/all-event',
     },
     {
       icon: '/assets/dashboard/layout/sidebar/iconEvent.svg',
       title: 'Event Pilihan',
-      link: '/dashboard',
+      link: '/dashboard/selected-events',
     },
     {
       icon: '/assets/dashboard/layout/sidebar/iconSegmentation.svg',
       title: 'Segmentasi',
-      link: '/dashboard',
+      link: '/dashboard/segmentation',
     },
     {
       icon: '/assets/dashboard/layout/sidebar/iconMic.svg',
       title: 'Tipe Event',
-      link: '/dashboard',
+      link: '/dashboard/type-event',
     },
     {
       icon: '/assets/dashboard/layout/sidebar/iconBannerEvent.svg',
       title: 'Banner Event',
-      link: '/dashboard',
+      link: '/dashboard/event-banner',
     },
   ];
 
@@ -56,33 +60,39 @@ const SideBarDashboard = () => {
     },
   ];
 
+  const isActive = (link: string) => {
+    return router.pathname === link;
+  };
+
   return (
     <div className='p-5 shadow-sm w-[240px] h-[90vh] flex flex-col justify-between sticky top-[72px]'>
       <div className=''>
         <div className='text-sm space-y-3 mb-3'>
           <p className='font-bold'>Akun</p>
-          <div className='space-y-1'>
+          <div className='space-y-4'>
             {titleSideAccount.map((item, index) => (
-              <div
-                key={index}
-                className='group hover:bg-[#2D4074] hover:rounded-[4px] 
-                px-3 py-2 py flex items-center gap-2 cursor-pointer'
-              >
-                <Image
-                  src={item.icon}
-                  alt='icon'
-                  width={32}
-                  height={32}
-                  className={`
-                  invert-[62%]
-                  group-hover:filter
-                  group-hover:brightness-[0]
-                  group-hover:invert-[100%]`}
-                />
-                <p className='group-hover:text-white group-hover:font-bold text-sm text-[#989898] '>
+              <Link key={index} href={item.link} className='space-y-2'>
+                <div
+                  className={`group hover:bg-[#2D4074] hover:rounded-[4px] hover:text-white px-3 py-2 flex items-center gap-2 cursor-pointer ${
+                    isActive(item.link)
+                      ? 'bg-[#2D4074] rounded-[4px] text-white font-bold'
+                      : ''
+                  }`}
+                >
+                  <Image
+                    src={item.icon}
+                    alt='icon'
+                    width={32}
+                    height={32}
+                    className={`invert-[62%] group-hover:filter group-hover:brightness-[0] group-hover:invert-[100%] ${
+                      isActive(item.link)
+                        ? 'filter brightness-[0] invert-[100%]'
+                        : ''
+                    }`}
+                  />
                   {item.title}
-                </p>
-              </div>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -90,25 +100,28 @@ const SideBarDashboard = () => {
           <p className='font-bold'>Event</p>
           <div className=' space-y-1'>
             {titleSideEvent.map((item, index) => (
+              <Link key={index} href={item.link} className='space-y-2'>
               <div
-                key={index}
-                className='group hover:bg-[#2D4074] hover:rounded-[4px] 
-                px-3 py-2 py flex items-center gap-2 cursor-pointer'
+                className={`group hover:bg-[#2D4074] hover:rounded-[4px] hover:text-white px-3 py-2 flex items-center gap-2 cursor-pointer ${
+                  isActive(item.link)
+                    ? 'bg-[#2D4074] rounded-[4px] text-white font-bold'
+                    : ''
+                }`}
               >
                 <Image
                   src={item.icon}
                   alt='icon'
                   width={32}
                   height={32}
-                  className={`
-                  group-hover:filter
-                  group-hover:brightness-[0]
-                  group-hover:invert-[100%]`}
+                  className={`invert-[62%] group-hover:filter group-hover:brightness-[0] group-hover:invert-[100%] ${
+                    isActive(item.link)
+                      ? 'filter brightness-[0] invert-[100%]'
+                      : ''
+                  }`}
                 />
-                <p className='group-hover:text-white group-hover:font-bold text-sm text-[#989898] '>
-                  {item.title}
-                </p>
+                {item.title}
               </div>
+            </Link>
             ))}
           </div>
         </div>

@@ -12,97 +12,24 @@ import PaginationDashboard from './paginationDashboard';
 
 type DataTableProps = {
   dataTable: any[];
+  column: any[];
 };
 
-const DataTable: React.FC<DataTableProps> = ({ dataTable }) => {
-  const [data, setData] = useState(() => [...dataTable]);
+const DataTable: React.FC<DataTableProps> = ({ dataTable, column }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
-
-  const columnHelper = createColumnHelper<any>();
-
-  const useMemoColumn = useMemo<ColumnDef<any>[]>(() => {
-    return [
-      columnHelper.accessor('firstName', {
-        header: 'Nama Akun',
-        cell: (info) => {
-          return (
-            <div className='flex gap-2 items-center'>
-              <div
-                className={`bg-[#40916C] text-white rounded-full 
-                size-8 flex justify-center items-center`}
-              >
-                {`${info.row.original.firstName.charAt(
-                  0
-                )} ${info.row.original.lastName.charAt(0)}`}
-              </div>
-              <p>{`${info.row.original.firstName} ${info.row.original.lastName}`}</p>
-            </div>
-          );
-        },
-      }),
-      columnHelper.accessor('email', {
-        header: 'Email',
-        cell: (info) => {
-          return (
-            <p className='truncate max-w-[122px]'>{info.row.original.email}</p>
-          );
-        },
-      }),
-      columnHelper.accessor('phone', {
-        header: 'Nomor Handphone',
-        cell: (info) => info.getValue(),
-      }),
-      columnHelper.accessor('payment', {
-        header: 'Pembayaran',
-        cell: (info) => {
-          const value = info.getValue() as number;
-          return new Intl.NumberFormat('en-US', {
-            style: 'currency',
-            currency: 'USD',
-          }).format(value);
-        },
-      }),
-      columnHelper.accessor('paymentProcess', {
-        header: 'Proses Pembayaran',
-        cell: (info) => info.getValue(),
-      }),
-      columnHelper.accessor('date', {
-        header: 'Tanggal Pengajuan',
-        cell: (info) => info.getValue(),
-      }),
-      columnHelper.accessor('actions', {
-        header: 'Detail',
-        cell: (info) => {
-          function convertToSlug(data: string) {
-            return data
-              .toLowerCase()
-              .toLowerCase()
-              .replace(/ /g, '-')
-              .replace(/[^\w-]+/g, '');
-          }
-
-          const slugName = convertToSlug(
-            info.row.original.firstName + '-' + info.row.original.lastName
-          );
-
-          return <Link href={`/dashboard/account-list/${slugName}`}>icon</Link>;
-        },
-      }),
-    ];
-  }, []);
 
   const paginatedData = useMemo(() => {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    return data.slice(startIndex, endIndex);
-  }, [data, currentPage, itemsPerPage]);
+    return dataTable.slice(startIndex, endIndex);
+  }, [dataTable, currentPage, itemsPerPage]);
 
-  const pageCount = Math.ceil(data.length / itemsPerPage);
+  const pageCount = Math.ceil(dataTable.length / itemsPerPage);
 
   const table = useReactTable({
     data: paginatedData ?? [],
-    columns: useMemoColumn,
+    columns: column,
     getCoreRowModel: getCoreRowModel(),
   });
 

@@ -1,10 +1,11 @@
 import InputDashboard from '@/components/ui/dashboard/inputDashboard';
+import TitleAccountList from '@/components/ui/main/titleAccountList';
 import React from 'react';
 
 const GeneralInformation = () => {
   return (
     <div className='space-y-6'>
-      <h1 className='text-xl font-bold pb-2 border-b-[1px]'>Informasi Umum</h1>
+      <TitleAccountList titleText='Informasi Umum' />
       <div className='grid grid-cols-2 gap-4'>
         <InputDashboard
           labelText='Username'

@@ -7,8 +7,8 @@ const Banner = () => {
         <Image
           src='/assets/main/landingPage/banner/imageBanner.png'
           alt='banner'
-          width={200}
-          height={200}
+          width={500}
+          height={500}
           className='w-full h-full object-cover rounded-xl'
         />
       </div>
