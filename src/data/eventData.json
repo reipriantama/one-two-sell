@@ -10,7 +10,7 @@
   },
   {
     "id": 2,
-    "image": "http://dummyimage.com/201x100.png/ff4444/ffffff",
+    "image": "/assets/main/landingPage/sellerFav/image1.png",
     "title": "Red 2",
     "date": "14-Dec-2023",
     "location": "880 Monument Pass",
@@ -19,7 +19,7 @@
   },
   {
     "id": 3,
-    "image": "http://dummyimage.com/136x100.png/dddddd/000000",
+    "image": "/assets/main/landingPage/sellerFav/image2.png",
     "title": "Maria",
     "date": "23-Jan-2024",
     "location": "2960 Thompson Point",
@@ -28,7 +28,7 @@
   },
   {
     "id": 4,
-    "image": "http://dummyimage.com/153x100.png/dddddd/000000",
+    "image": "/assets/main/landingPage/sellerFav/image3.png",
     "title": "No Greater Love",
     "date": "07-Oct-2023",
     "location": "1250 Graceland Alley",
@@ -37,7 +37,7 @@
   },
   {
     "id": 5,
-    "image": "http://dummyimage.com/182x100.png/5fa2dd/ffffff",
+    "image": "/assets/main/landingPage/sellerFav/image4.png",
     "title": "Journey to the Sun ",
     "date": "28-May-2023",
     "location": "3 Oneill Street",
@@ -46,7 +46,7 @@
   },
   {
     "id": 6,
-    "image": "http://dummyimage.com/206x100.png/dddddd/000000",
+    "image": "/assets/main/landingPage/sellerFav/image5.png",
     "title": "God Save the King",
     "date": "20-Apr-2023",
     "location": "243 Glacier Hill Crossing",
@@ -55,7 +55,7 @@
   },
   {
     "id": 7,
-    "image": "http://dummyimage.com/221x100.png/ff4444/ffffff",
+    "image": "/assets/main/landingPage/sellerFav/image6.png",
     "title": "Hell Night",
     "date": "22-Nov-2023",
     "location": "075 Montana Court",
@@ -64,7 +64,7 @@
   },
   {
     "id": 8,
-    "image": "http://dummyimage.com/172x100.png/ff4444/ffffff",
+    "image": "/assets/main/landingPage/sellerFav/imageConcert1.png",
     "title": "Throne of Blood (Kumonosu jô)",
     "date": "16-Apr-2023",
     "location": "97 Maple Place",
@@ -73,7 +73,7 @@
   },
   {
     "id": 9,
-    "image": "http://dummyimage.com/113x100.png/ff4444/ffffff",
+    "image": "/assets/main/landingPage/sellerFav/imageConcert2.png",
     "title": "Missionary",
     "date": "19-Mar-2023",
     "location": "9448 Maywood Circle",
@@ -82,7 +82,7 @@
   },
   {
     "id": 10,
-    "image": "http://dummyimage.com/237x100.png/ff4444/ffffff",
+    "image": "/assets/main/landingPage/sellerFav/imageConcert3.png",
     "title": "My Fellow Americans",
     "date": "25-Feb-2024",
     "location": "461 Delaware Drive",
@@ -91,7 +91,7 @@
   },
   {
     "id": 11,
-    "image": "http://dummyimage.com/121x100.png/5fa2dd/ffffff",
+    "image": "/assets/main/landingPage/sellerFav/imageConcert4.png",
     "title": "Hansel & Gretel",
     "date": "06-Mar-2024",
     "location": "1082 Springs Avenue",
@@ -100,7 +100,7 @@
   },
   {
     "id": 12,
-    "image": "http://dummyimage.com/207x100.png/ff4444/ffffff",
+    "image": "/assets/main/landingPage/sellerFav/imageConcert5.png",
     "title": "Color of Paradise, ",
     "date": "19-Nov-2023",
     "location": "28 Sycamore Trail",
@@ -109,7 +109,7 @@
   },
   {
     "id": 13,
-    "image": "http://dummyimage.com/239x100.png/cc0000/ffffff",
+    "image": "/assets/main/landingPage/sellerFav/imageConcert6.png",
     "title": "Herbie Goes to Monte Carlo",
     "date": "16-Aug-2023",
     "location": "8883 Bunker Hill Point",
@@ -118,7 +118,7 @@
   },
   {
     "id": 14,
-    "image": "http://dummyimage.com/164x100.png/cc0000/ffffff",
+    "image": "/assets/main/landingPage/sellerFav/imageConcert7.png",
     "title": "Hollywood Complex, The",
     "date": "03-Jul-2023",
     "location": "23681 Anthes Court",
@@ -127,7 +127,7 @@
   },
   {
     "id": 15,
-    "image": "http://dummyimage.com/246x100.png/dddddd/000000",
+    "image": "/assets/main/landingPage/sellerFav/imageConcert8.png",
     "title": "Young Black Stallion, The",
     "date": "25-Jan-2024",
     "location": "59 American Junction",
@@ -136,7 +136,7 @@
   },
   {
     "id": 16,
-    "image": "http://dummyimage.com/109x100.png/5fa2dd/ffffff",
+    "image": "/assets/main/landingPage/sellerFav/imageConcert9.png",
     "title": "Zoot Suit",
     "date": "08-Jul-2023",
     "location": "808 Thompson Park",
@@ -145,7 +145,7 @@
   },
   {
     "id": 17,
-    "image": "http://dummyimage.com/197x100.png/ff4444/ffffff",
+    "image": "/assets/main/landingPage/sellerFav/imageConcert10.png",
     "title": "Night Across the Street ",
     "date": "14-May-2023",
     "location": "16 Miller Alley",
@@ -154,7 +154,7 @@
   },
   {
     "id": 18,
-    "image": "http://dummyimage.com/131x100.png/ff4444/ffffff",
+    "image": "/assets/main/landingPage/sellerFav/imageConcert11.png",
     "title": "Almost You",
     "date": "26-May-2023",
     "location": "458 Utah Lane",
@@ -163,7 +163,7 @@
   },
   {
     "id": 19,
-    "image": "http://dummyimage.com/222x100.png/cc0000/ffffff",
+    "image": "/assets/main/landingPage/sellerFav/imageConcert12.png",
     "title": "Asterix & Obelix",
     "date": "04-Feb-2024",
     "location": "1073 Hagan Trail",
@@ -172,7 +172,7 @@
   },
   {
     "id": 20,
-    "image": "http://dummyimage.com/201x100.png/ff4444/ffffff",
+    "image": "/assets/main/landingPage/sellerFav/imageConcert13.png",
     "title": "Permanent Midnight",
     "date": "20-Sep-2023",
     "location": "2687 Crowley Circle",

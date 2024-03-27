@@ -13,10 +13,10 @@ import { MdOutlineChevronRight } from 'react-icons/md';
 const DetailProductPage = () => {
   return (
     <>
-      <Layout className='p-12 space-y-12' title='Detail'>
-        <div className='flex gap-6 '>
+      <Layout className='py-12 space-y-12' title='Detail'>
+        <div className='px-12 flex gap-6 '>
           <div className='flex-1'>
-            <div>breadcrumb</div>
+            {/* <div>breadcrumb</div> */}
             <div className='space-y-12'>
               <Description />
               <TermCondition />

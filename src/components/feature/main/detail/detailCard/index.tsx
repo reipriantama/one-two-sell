@@ -1,8 +1,12 @@
+import { useRouter } from 'next/router';
 import { CiCalendar } from 'react-icons/ci';
 import { FaRegClock } from 'react-icons/fa';
 import { MdOutlineLocationOn } from 'react-icons/md';
 
 const DetailCard = () => {
+  const { query } = useRouter();
+  console.log(query.slug);
+
   return (
     <div
       className='2xl:w-[432px]
@@ -29,7 +33,7 @@ const DetailCard = () => {
         <div>Penjual :</div>
         <div className='flex gap-2 items-center'>
           <div className='size-9 bg-[#D9D9D9] rounded-full'></div>
-          <div>Johnny Doe</div>
+          <div>{query?.slug}</div>
         </div>
       </div>
     </div>

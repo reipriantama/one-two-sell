@@ -1,12 +1,11 @@
+import TitleEvent from '@/components/ui/main/titleCarousel';
 import CarouselCard from '../../../../ui/main/carousel/carouselCard';
 
 const BestEvent = ({ eventData }: { eventData: any }) => {
   return (
-    <div className=' py-12 bg-navy-blue text-white'>
-      <div className='px-12 flex justify-between items-end mb-6'>
-        <div className='text-2xl font-semibold'>Event Terlaris</div>
-        {/* link ke halaman lihat semua */}
-        <div className='text-sm text-[#D9E9E3] font-medium'>Lihat Semua</div>
+    <div className=' py-12 bg-navy-blue '>
+      <div className='px-12 '>
+        <TitleEvent titleText='Event Terlaris' className='text-white' />
       </div>
       <div>
         <CarouselCard eventData={eventData} className='text-white' />

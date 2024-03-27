@@ -12,7 +12,7 @@ const SideBarEvent = () => {
       <div className='flex justify-between items-center pb-9 border-b-[1px] border-[#D9D9D9] mb-6'>
         <div className='font-bold text-2xl text-[#141414]'>Filter</div>
         <Image
-          src='/assets/event/sideBar/restart_alt.svg'
+          src='/assets/main/event/sideBar/restart_alt.svg'
           alt='filter'
           width={24}
           height={24}

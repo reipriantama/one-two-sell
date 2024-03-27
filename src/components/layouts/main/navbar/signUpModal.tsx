@@ -9,7 +9,7 @@ const SignUpModal = ({ closeModal }: { closeModal: () => void }) => {
       <div className='w-full max-w-[540px] bg-white p-9 space-y-12'>
         <div className='flex justify-between items-center'>
           <Image
-            src='/assets/layout/navbar/oneTwoSellLogo.svg'
+            src='/assets/main/layout/navbar/oneTwoSellLogo.svg'
             alt='logo'
             width={72}
             height={72}

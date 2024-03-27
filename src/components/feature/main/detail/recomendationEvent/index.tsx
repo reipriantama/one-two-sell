@@ -1,13 +1,12 @@
+import TitleEvent from '@/components/ui/main/titleCarousel';
 import CarouselCard from '../../../../ui/main/carousel/carouselCard';
 
 const RecomendationEvent = ({ eventData }: { eventData: any }) => {
   return (
     <div className=''>
       <div className=''>
-        <div className='flex justify-between items-end mb-6'>
-          <div className='text-2xl font-semibold'>Rekomendasi Event Serupa</div>
-          {/* link ke halaman lihat semua */}
-          <div className='text-sm text-[#757575] font-medium'>Lihat Semua</div>
+        <div className='px-12 '>
+          <TitleEvent titleText='Rekomendasi Event Serupa' />
         </div>
         <CarouselCard eventData={eventData} className='' />
       </div>

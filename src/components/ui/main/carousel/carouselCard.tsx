@@ -5,6 +5,12 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import { EventDataType } from '@/types/eventData.type';
+import {
+  MdOutlineKeyboardArrowLeft,
+  MdOutlineKeyboardArrowRight,
+} from 'react-icons/md';
+import { useId } from 'react';
+import Link from 'next/link';
 
 const CarouselCard = ({
   eventData,
@@ -13,6 +19,7 @@ const CarouselCard = ({
   eventData: EventDataType[];
   className: string;
 }) => {
+  const id = useId().replace(/[^a-zA-Z0-9]/g, '');
   const formatPriceToRupiah = (price: number): string => {
     const formattedPrice = new Intl.NumberFormat('id-ID', {
       style: 'currency',
@@ -21,15 +28,24 @@ const CarouselCard = ({
     return formattedPrice;
   };
   return (
-    <div className='flex'>
+    <div className='space-y-1 relative'>
       <Swiper
         slidesPerView={4.5}
         spaceBetween={24}
-        navigation={true}
+        navigation={{
+          nextEl: `.next-navigation-${id}`,
+          prevEl: `.prev-navigation-${id}`,
+        }}
         modules={[Navigation]}
         slidesOffsetBefore={48}
         slidesOffsetAfter={48}
-        className=''
+        className='w-full'
+        onInit={(swiper: any) => {
+          swiper.params.navigation.prevEl = `.prev-navigation-${id}`;
+          swiper.params.navigation.nextEl = `.next-navigation-${id}`;
+          swiper.navigation.init();
+          swiper.navigation.update();
+        }}
       >
         {eventData?.map((data: any, index: number) => (
           <SwiperSlide className='' key={index}>
@@ -44,7 +60,9 @@ const CarouselCard = ({
             </div>
             <div className='flex flex-col gap-1 text-[#4A62A2] font-semibold mb-3'>
               <div className={`text-sm font-semibold`}>{data.date}</div>
-              <div className={`text-xl ${className}`}>{data.title}</div>
+              <div className={`text-xl ${className}`}>
+                <Link href={`/event/${data.title}`}>{data.title}</Link>
+              </div>
               <div className='text-[#848484] text-sm font-normal'>
                 {data.location}
               </div>
@@ -55,6 +73,18 @@ const CarouselCard = ({
           </SwiperSlide>
         ))}
       </Swiper>
+      <div
+        className={`next-navigation-${id} cursor-pointer absolute right-[25px] top-[100px] z-10
+       bg-white size-12 rounded-full shadow-md flex items-center justify-center`}
+      >
+        <MdOutlineKeyboardArrowRight className='size-6' />
+      </div>
+      <div
+        className={`prev-navigation-${id} cursor-pointer absolute left-[25px] top-[100px] z-10
+       bg-white size-12 rounded-full shadow-md flex items-center justify-center`}
+      >
+        <MdOutlineKeyboardArrowLeft className='size-6' />
+      </div>
     </div>
   );
 };

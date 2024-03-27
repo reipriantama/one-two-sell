@@ -6,8 +6,10 @@ import {
   SelectValue,
 } from '@/components/ui/main/select';
 import Button from '../../../../ui/main/button';
+import { useRouter } from 'next/router';
 
 const BuyTicket = () => {
+  const { query } = useRouter();
   return (
     <div
       className='xl:w-[432px]
@@ -42,6 +44,7 @@ border-2 rounded-xl p-6 space-y-6'
           buttonText='Beli Tiket'
           className='w-full flex justify-center'
           primary
+          link={`/transaction/${query.slug}`}
         />
       </div>
     </div>

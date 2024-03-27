@@ -6,16 +6,19 @@ const VoucherBidCard = () => {
   const bidCard = [
     {
       id: 1,
+      image: '/assets/main/landingPage/sellerFav/imageConcert4.png',
       count: 1,
       price: 250000,
     },
     {
       id: 2,
+      image: '/assets/main/landingPage/sellerFav/imageConcert2.png',
       count: 2,
       price: 250000,
     },
     {
       id: 3,
+      image: '/assets/main/landingPage/sellerFav/imageConcert3.png',
       count: 3,
       price: 250000,
     },
@@ -31,11 +34,11 @@ const VoucherBidCard = () => {
             className='rounded-xl border-2 p-6 shadow-lg space-y-6'
           >
             <Image
-              src='/assets/voucherBid/imageConcert.png'
+              src={item.image}
               alt='logo'
               width={270}
               height={160}
-              className='w-[270] h-[160px] object-cover'
+              className='w-full h-[160px] object-cover rounded-xl'
             />
             <div className='space-y-1 text-base'>
               <p className='font-medium'>{item.id} Voucher Bid</p>
