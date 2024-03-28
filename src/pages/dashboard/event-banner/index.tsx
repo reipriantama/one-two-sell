@@ -2,7 +2,6 @@ import TitleDashboard from '@/components/feature/dashboard/titleDashboard';
 import LayoutDashboard from '@/components/layouts/dashboard';
 import ButtonTitle from '@/components/ui/dashboard/button';
 import DataTable from '@/components/ui/dashboard/dataTable';
-import DeleteModal from '@/components/ui/dashboard/deleteModal';
 import { tableData } from '@/data/tableData';
 import { ColumnDef, createColumnHelper } from '@tanstack/react-table';
 import Link from 'next/link';
@@ -10,7 +9,7 @@ import React, { useMemo, useState } from 'react';
 import { FaTrash } from 'react-icons/fa';
 import { IoMdInformationCircleOutline } from 'react-icons/io';
 
-const AllEvent = () => {
+const BannerPage = () => {
   const data = tableData;
   const [showDeleteModal, setIsShowDeleteModal] = useState(false);
 
@@ -22,30 +21,25 @@ const AllEvent = () => {
 
   const useMemoColumn = useMemo<ColumnDef<any>[]>(() => {
     return [
+      columnHelper.accessor('banner', {
+        header: 'Nama Banner',
+        cell: (info) => info.getValue(),
+      }),
       columnHelper.accessor('eventName', {
         header: 'Nama Event',
+        cell: (info) => info.getValue(),
+      }),
+      columnHelper.accessor('status', {
+        header: 'Status',
         cell: (info) => {
-          return <p className=''>{info.row.original.eventName}</p>;
+          const value = info.getValue();
+          return value ? (
+            <div className=' text-xs text-[#222222]'>Aktif</div>
+          ) : (
+            <div className=' text-xs text-[#989898]'>Tidak Aktif</div>
+          );
         },
       }),
-      columnHelper.accessor('dateEvent', {
-        header: 'Tanggal Acara',
-        cell: (info) => info.getValue(),
-      }),
-      columnHelper.accessor('typeEvent', {
-        header: 'Tipe Acara',
-        cell: (info) => info.getValue(),
-      }),
-      columnHelper.accessor('genre', {
-        header: 'Segment',
-        cell: (info) => info.getValue(),
-      }),
-
-      columnHelper.accessor('format', {
-        header: 'Format',
-        cell: (info) => info.getValue(),
-      }),
-
       columnHelper.accessor('actions', {
         header: 'Detail',
         cell: (info) => {
@@ -64,7 +58,7 @@ const AllEvent = () => {
           return (
             <div className='flex gap-2'>
               <Link
-                href={`/dashboard/all-event/${info.row.original.eventName}`}
+                href={`/dashboard/event-banner/${info.row.original.eventName}`}
               >
                 <IoMdInformationCircleOutline className='size-4 text-[#129555]' />
               </Link>
@@ -80,23 +74,19 @@ const AllEvent = () => {
       }),
     ];
   }, []);
-
   return (
     <>
       <LayoutDashboard className='bg-[#F8F8F8] flex-1 px-5 py-2 space-y-5'>
-        <TitleDashboard title='Semua Event'>
+        <TitleDashboard title='Banner'>
           <ButtonTitle
-            buttonText='Tambah Event'
-            link='/dashboard/all-event/add-event'
+            buttonText='Tambah Banner'
+            link='/dashboard/event-banner/add-banner'
           />
         </TitleDashboard>
         <DataTable column={useMemoColumn} dataTable={data} />
       </LayoutDashboard>
-      {showDeleteModal && (
-        <DeleteModal onClick={closeModal} closeModal={closeModal} />
-      )}
     </>
   );
 };
 
-export default AllEvent;
+export default BannerPage;

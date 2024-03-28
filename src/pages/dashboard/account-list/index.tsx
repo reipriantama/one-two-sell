@@ -1,7 +1,7 @@
 import TitleDashboard from '@/components/feature/dashboard/titleDashboard';
 import LayoutDashboard from '@/components/layouts/dashboard';
 import ButtonTitle from '@/components/ui/dashboard/button';
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 
 import { tableData, Person } from '@/data/tableData';
 import DataTable from '@/components/ui/dashboard/dataTable';
@@ -9,11 +9,16 @@ import { ColumnDef, createColumnHelper } from '@tanstack/react-table';
 import Link from 'next/link';
 import { IoMdInformationCircleOutline } from 'react-icons/io';
 import { FaTrash } from 'react-icons/fa';
+import DeleteModal from '@/components/ui/dashboard/deleteModal';
 
 const AccountListPage = () => {
   const data = tableData;
+  const [showDeleteModal, setIsShowDeleteModal] = useState(false);
 
-  console.log(data);
+  const closeModal = () => {
+    setIsShowDeleteModal(false);
+  };
+
   const columnHelper = createColumnHelper<any>();
 
   const useMemoColumn = useMemo<ColumnDef<any>[]>(() => {
@@ -80,11 +85,14 @@ const AccountListPage = () => {
 
           return (
             <div className='flex gap-2'>
-              <Link href={`/dashboard/account-list/${slugName}`}>
+              <Link href={`/dashboard/all-event/${slugName}`}>
                 <IoMdInformationCircleOutline className='size-4 text-[#129555]' />
               </Link>
               <div>
-                <FaTrash className='size-4 text-[#D10D0D]' />
+                <FaTrash
+                  className='size-4 text-[#D10D0D] cursor-pointer'
+                  onClick={() => setIsShowDeleteModal(true)}
+                />
               </div>
             </div>
           );
@@ -101,6 +109,9 @@ const AccountListPage = () => {
         </TitleDashboard>
         <DataTable dataTable={data} column={useMemoColumn} />
       </LayoutDashboard>
+      {showDeleteModal && (
+        <DeleteModal onClick={closeModal} closeModal={closeModal} />
+      )}
     </div>
   );
 };

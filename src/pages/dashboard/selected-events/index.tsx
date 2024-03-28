@@ -1,6 +1,5 @@
 import TitleDashboard from '@/components/feature/dashboard/titleDashboard';
 import LayoutDashboard from '@/components/layouts/dashboard';
-import ButtonTitle from '@/components/ui/dashboard/button';
 import DataTable from '@/components/ui/dashboard/dataTable';
 import DeleteModal from '@/components/ui/dashboard/deleteModal';
 import { tableData } from '@/data/tableData';
@@ -10,7 +9,7 @@ import React, { useMemo, useState } from 'react';
 import { FaTrash } from 'react-icons/fa';
 import { IoMdInformationCircleOutline } from 'react-icons/io';
 
-const AllEvent = () => {
+const SelectedEvent = () => {
   const data = tableData;
   const [showDeleteModal, setIsShowDeleteModal] = useState(false);
 
@@ -64,7 +63,7 @@ const AllEvent = () => {
           return (
             <div className='flex gap-2'>
               <Link
-                href={`/dashboard/all-event/${info.row.original.eventName}`}
+                href={`/dashboard/selected-events/${info.row.original.eventName}`}
               >
                 <IoMdInformationCircleOutline className='size-4 text-[#129555]' />
               </Link>
@@ -80,16 +79,10 @@ const AllEvent = () => {
       }),
     ];
   }, []);
-
   return (
     <>
       <LayoutDashboard className='bg-[#F8F8F8] flex-1 px-5 py-2 space-y-5'>
-        <TitleDashboard title='Semua Event'>
-          <ButtonTitle
-            buttonText='Tambah Event'
-            link='/dashboard/all-event/add-event'
-          />
-        </TitleDashboard>
+        <TitleDashboard title='Selected Event' />
         <DataTable column={useMemoColumn} dataTable={data} />
       </LayoutDashboard>
       {showDeleteModal && (
@@ -99,4 +92,4 @@ const AllEvent = () => {
   );
 };
 
-export default AllEvent;
+export default SelectedEvent;

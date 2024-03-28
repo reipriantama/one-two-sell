@@ -10,6 +10,7 @@ import {
 import Image from 'next/image';
 
 const TitleCarousel = () => {
+  
   const imageData = [
     {
       title: 'Title 1',
@@ -44,7 +45,7 @@ const TitleCarousel = () => {
         }}
       >
         {imageData.map((item, index) => (
-          <SwiperSlide className='bg-[#E0E0E0]'>
+          <SwiperSlide key={index} className='bg-[#E0E0E0]'>
             <div>
               <Image
                 src={item.image}

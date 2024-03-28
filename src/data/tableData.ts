@@ -16,6 +16,7 @@ export type Person = {
   eventName: string;
   dateEvent: string;
   genre: string;
+  banner: string;
 };
 
 const range = (len: number) => {
@@ -37,11 +38,19 @@ export const tableData: Person[] = [...Array(30)].map(() => ({
   detail: faker.lorem.paragraph(),
   status: faker.datatype.boolean(),
   typeEvent: faker.helpers.arrayElement(['Festival', 'Seminar']),
-  eventName: faker.helpers.arrayElement([
-    'Parade Sihir - Bandung',
-    'Parade Musik - Jakarta',
+  eventName: faker.helpers.fake([
+    'Parade Sihir - {{location.cityName}}',
   ]),
   dateEvent: faker.date.future().toDateString(),
   genre: faker.music.genre(),
   format: faker.helpers.arrayElement(['Online', 'Offline']),
+  banner: faker.helpers.fake('Image_Parade_Sihir_{{random.numeric}}'),
 }));
+
+// console.log(tableData);
+// const hello = faker.helpers.fake('Image_Parade_Sihir_{{person.firstName}}!');
+// const hello2 = faker.helpers.fake('Image_Parade_Sihir_{{random.numeric}}!');
+
+// console.log(hello);
+// console.log(hello2);
+// console.log(hello);

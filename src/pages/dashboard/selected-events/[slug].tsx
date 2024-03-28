@@ -7,7 +7,7 @@ import BreadCrumbDashboard from '@/components/ui/dashboard/breadCrumb';
 import Button from '@/components/ui/main/button';
 import React from 'react';
 
-const DetailEvent = () => {
+const DetailSelectedEventPage = () => {
   return (
     <>
       <LayoutDashboard
@@ -45,4 +45,4 @@ const DetailEvent = () => {
   );
 };
 
-export default DetailEvent;
+export default DetailSelectedEventPage;

@@ -18,8 +18,8 @@ const BreadCrumbDashboard = (props: any) => {
   }
   return (
     <div className='flex gap-1 items-center'>
-      <Link href={'/dashboard/account-list'} className='text-[#989898] text-sm'>
-        {props.breadCrumbText}
+      <Link href={props.breadCrumbLink} className='text-[#989898] text-sm'>
+        {props.breadCrumbTextLink}
       </Link>
       <Image
         src={'/assets/dashboard/accountListDetail/arrowRight.svg'}
@@ -27,7 +27,9 @@ const BreadCrumbDashboard = (props: any) => {
         width={24}
         height={24}
       />
-      <p className='text-[#4A62A2] text-sm font-bold'>{formattedSlug}</p>
+      <p className='text-[#4A62A2] text-sm font-bold'>
+        {formattedSlug ? <>{formattedSlug}</> : <>{props.breadCrumbText}</>}
+      </p>
     </div>
   );
 };

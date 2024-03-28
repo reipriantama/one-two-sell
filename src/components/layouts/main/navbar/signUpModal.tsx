@@ -5,7 +5,7 @@ import { IoClose } from 'react-icons/io5';
 
 const SignUpModal = ({ closeModal }: { closeModal: () => void }) => {
   return (
-    <div className='fixed z-10 inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50'>
+    <div className='fixed z-20 inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50'>
       <div className='w-full max-w-[540px] bg-white p-9 space-y-12'>
         <div className='flex justify-between items-center'>
           <Image
@@ -15,7 +15,7 @@ const SignUpModal = ({ closeModal }: { closeModal: () => void }) => {
             height={72}
           />
           <IoClose
-            className='size-[48px] text-navy-blue'
+            className='size-[48px] text-navy-blue cursor-pointer'
             onClick={closeModal}
           />
         </div>
@@ -63,7 +63,7 @@ const SignUpModal = ({ closeModal }: { closeModal: () => void }) => {
           <div className='space-y-4'>
             <Button
               buttonText='Daftar'
-              className='w-full text-white bg-[#4A62A2]'
+              className='w-full justify-center text-white bg-[#4A62A2] hover:border-[#4A62A2] hover:bg-[#2D4074]'
             />
             <p className='flex justify-center text-navy-blue'>
               Sudah punya akun ?
@@ -79,7 +79,7 @@ const SignUpModal = ({ closeModal }: { closeModal: () => void }) => {
             </p>
             <Button
               buttonText='Masuk dengan Google'
-              className='w-full text-white bg-[#4A62A2]'
+              className='w-full justify-center text-white bg-[#4A62A2] hover:border-[#4A62A2] hover:bg-[#2D4074]'
             />
           </div>
         </div>

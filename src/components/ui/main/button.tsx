@@ -2,12 +2,16 @@ import Link from 'next/link';
 
 const Button = (props: any) => {
   const buttonClassName = `py-3 ${
-    props.outline ? 'border-[1px] border-[#4A62A2] text-[#4A62A2]' : ''
+    props.outline
+      ? 'border-[1px] border-[#4A62A2] text-[#4A62A2] hover:bg-[#4A62A2] hover:text-white'
+      : ''
   } ${
     props.primary
-      ? 'bg-gradient-to-b from-[#4A62A2] to-[#2D4074] text-white'
+      ? 'bg-gradient-to-b from-[#4A62A2] to-[#2D4074] text-white hover:bg-gradient-to-b hover:from-[#2D4074] hover:to-[#4A62A2]'
       : ''
-  } ${props.className}`;
+  } ${props.danger ? 'bg-red-500 text-white hover:bg-red-600' : ''} ${
+    props.className
+  }`;
 
   return (
     // sebaiknya menggunakan logic switchcase

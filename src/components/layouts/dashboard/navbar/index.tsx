@@ -13,7 +13,7 @@ const NavbarDashboard = () => {
           height={32}
         />
       </div>
-      <div className='px-5 py-[14px] flex item gap-6 justify-between w-full shadow-sm'>
+      <div className='px-5 py-[14px] flex item gap-6 justify-between items-center w-full shadow-sm'>
         <div className='relative w-full flex pr-6 border-r-[1px]'>
           <input
             type='search'
