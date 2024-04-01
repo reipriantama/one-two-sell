@@ -65,7 +65,7 @@ const SideBarDashboard = () => {
   };
 
   return (
-    <div className='p-5 shadow-sm w-[240px] h-[90vh] flex flex-col justify-between sticky top-[72px]'>
+    <div className='p-5 shadow-sm 2xl:w-[250px] w-[240px] h-[90vh] flex flex-col justify-between sticky top-[72px]'>
       <div className=''>
         <div className='text-sm space-y-3 mb-3'>
           <p className='font-bold'>Akun</p>
@@ -73,7 +73,7 @@ const SideBarDashboard = () => {
             {titleSideAccount.map((item, index) => (
               <Link key={index} href={item.link} className='space-y-2'>
                 <div
-                  className={`group hover:bg-[#2D4074] hover:rounded-[4px] hover:text-white px-3 py-2 flex items-center gap-2 cursor-pointer ${
+                  className={`text-[#989898] group hover:bg-[#2D4074] hover:rounded-[4px] hover:text-white px-3 py-2 flex items-center gap-2 cursor-pointer ${
                     isActive(item.link)
                       ? 'bg-[#2D4074] rounded-[4px] text-white font-bold'
                       : ''
@@ -90,9 +90,7 @@ const SideBarDashboard = () => {
                         : ''
                     }`}
                   />
-                  <p className='group-hover:text-white group-hover:font-bold text-sm text-[#989898]'>
-                    {item.title}
-                  </p>
+                  {item.title}
                 </div>
               </Link>
             ))}
@@ -104,7 +102,7 @@ const SideBarDashboard = () => {
             {titleSideEvent.map((item, index) => (
               <Link key={index} href={item.link} className='space-y-2'>
                 <div
-                  className={`group hover:bg-[#2D4074] hover:rounded-[4px] hover:text-white px-3 py-2 flex items-center gap-2 cursor-pointer ${
+                  className={`text-[#989898] group hover:bg-[#2D4074] hover:rounded-[4px] hover:text-white px-3 py-2 flex items-center gap-2 cursor-pointer ${
                     isActive(item.link)
                       ? 'bg-[#2D4074] rounded-[4px] text-white font-bold'
                       : ''
@@ -121,9 +119,7 @@ const SideBarDashboard = () => {
                         : ''
                     }`}
                   />
-                  <p className='group-hover:text-white group-hover:font-bold text-sm text-[#989898]'>
-                    {item.title}
-                  </p>
+                  {item.title}
                 </div>
               </Link>
             ))}
@@ -135,7 +131,7 @@ const SideBarDashboard = () => {
             {titleSideTicket.map((item, index) => (
               <Link key={index} href={item.link} className='space-y-2'>
                 <div
-                  className={`group hover:bg-[#2D4074] hover:rounded-[4px] hover:text-white px-3 py-2 flex items-center gap-2 cursor-pointer ${
+                  className={`text-[#989898] group hover:bg-[#2D4074] hover:rounded-[4px] hover:text-white px-3 py-2 flex items-center gap-2 cursor-pointer ${
                     isActive(item.link)
                       ? 'bg-[#2D4074] rounded-[4px] text-white font-bold'
                       : ''
@@ -152,9 +148,7 @@ const SideBarDashboard = () => {
                         : ''
                     }`}
                   />
-                  <p className='group-hover:text-white group-hover:font-bold text-sm text-[#989898]'>
-                    {item.title}
-                  </p>
+                  {item.title}
                 </div>
               </Link>
             ))}

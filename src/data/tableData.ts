@@ -5,6 +5,7 @@ faker.seed(1);
 export type Person = {
   firstName: string;
   lastName: string;
+  fullName: string;
   email: string;
   phone: string;
   payment: number;
@@ -18,6 +19,9 @@ export type Person = {
   genre: string;
   banner: string;
   typeEventOl: string;
+  idInvoice: number;
+  idIdentity: number;
+  salePrice: number;
 };
 
 const range = (len: number) => {
@@ -31,6 +35,7 @@ const range = (len: number) => {
 export const tableData: Person[] = [...Array(30)].map(() => ({
   firstName: faker.person.firstName(),
   lastName: faker.person.middleName(),
+  fullName: faker.person.fullName(),
   email: faker.internet.email(),
   phone: faker.phone.number(),
   payment: parseFloat(faker.finance.amount()),
@@ -45,6 +50,9 @@ export const tableData: Person[] = [...Array(30)].map(() => ({
   genre: faker.music.genre(),
   format: faker.helpers.arrayElement(['Online', 'Offline']),
   banner: faker.helpers.fake('Image_Parade_Sihir_{{random.numeric}}'),
+  idInvoice: faker.number.int({ min: 10, max: 1_000_000_000 }),
+  idIdentity: faker.number.int({ min: 10, max: 1_000_000_000_000_000 }),
+  salePrice: parseFloat(faker.finance.amount({ min: 100, max: 200, dec: 2 })),
 }));
 
 // console.log(tableData);

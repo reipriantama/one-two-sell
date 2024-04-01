@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 
 const PaginationDashboard = (props: any) => {
   return (
@@ -16,23 +17,23 @@ const PaginationDashboard = (props: any) => {
           {/* tambahkan opsi lain sesuai kebutuhan Anda */}
         </select>
       </div>
-      <div>
+      <div className='flex items-center gap-1'>
         <button
           onClick={props.goToPrevPage}
           disabled={props.currentPage === 1}
-          className='px-3 py-1 mr-2 bg-blue-500 text-white rounded'
+          className='group p-1 text-white hover:rounded hover:bg-navy-blue'
         >
-          Previous
+          <FaAngleLeft className='text-[#989898] size-6 group-hover:text-white' />
         </button>
         {Array.from({ length: props.pageCount }, (_, i) => i + 1).map(
           (page) => (
             <button
               key={page}
               onClick={() => props.setCurrentPage(page)}
-              className={`px-3 py-1 mr-2 ${
+              className={`px-3 py-1 border-[1px] hover:text-navy-blue ${
                 props.currentPage === page
-                  ? 'bg-blue-500 text-white'
-                  : 'bg-gray-200 text-gray-800'
+                  ? 'border-navy-blue text-navy-blue'
+                  : 'border-[1px] text-gray-800'
               } rounded`}
             >
               {page}
@@ -42,9 +43,9 @@ const PaginationDashboard = (props: any) => {
         <button
           onClick={props.goToNextPage}
           disabled={props.currentPage === props.pageCount}
-          className='px-3 py-1 bg-blue-500 text-white rounded'
+          className='group p-1 text-white hover:rounded hover:bg-navy-blue'
         >
-          Next
+          <FaAngleRight className='text-[#989898] size-6 group-hover:text-white' />
         </button>
       </div>
     </div>

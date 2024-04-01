@@ -5,7 +5,7 @@ import React from 'react';
 const TitleDashboard = (props: any) => {
   return (
     <div className='flex items-center justify-between'>
-      <h1 className='text-navy-blue text-sm font-bold'>{props.title}</h1>
+      <h1 className='text-navy-blue py-4 text-sm font-bold'>{props.title}</h1>
       <div className='flex gap-4 text-xs text-[#989898]'>
         {props.children}
         {/* {props?.show && <ButtonDashboard buttonText={props.buttonText} />} */}

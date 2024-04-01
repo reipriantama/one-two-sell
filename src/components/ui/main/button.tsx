@@ -9,9 +9,10 @@ const Button = (props: any) => {
     props.primary
       ? 'bg-gradient-to-b from-[#4A62A2] to-[#2D4074] text-white hover:bg-gradient-to-b hover:from-[#2D4074] hover:to-[#4A62A2]'
       : ''
-  } ${props.danger ? 'bg-red-500 text-white hover:bg-red-600' : ''} ${
-    props.className
-  }`;
+  } ${props.danger ? 'bg-[#D73A28] text-white hover:bg-red-600' : ''} 
+  ${props.confirm ? 'bg-[#129555] text-white hover:bg-green-600' : ''}
+  
+    ${props.className}`;
 
   return (
     // sebaiknya menggunakan logic switchcase
