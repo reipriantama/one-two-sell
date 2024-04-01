@@ -11,7 +11,7 @@ const LayoutDashboard = (props: any) => {
       </Head>
       <div className=' w-screen h-screen overflow-hidden'>
         <div className='relative w-full h-screen overflow-auto '>
-          <div className='sticky top-0'>
+          <div className='sticky top-0 z-10'>
             <NavbarDashboard />
           </div>
           <div className='flex'>

@@ -1,33 +1,33 @@
-import InformationBanner from '@/components/feature/dashboard/banner/informationBanner';
+import InformationSegmentation from '@/components/feature/dashboard/segmentation/informationSegmentation';
 import LayoutDashboard from '@/components/layouts/dashboard';
 import BreadCrumbDashboard from '@/components/ui/dashboard/breadCrumb';
 import Button from '@/components/ui/main/button';
 import React from 'react';
 
-const DetailBannerPage = () => {
+const DetailSegmentationPage = () => {
   return (
-    <>
+    <div>
       <LayoutDashboard
-        title='Detail Banner'
+        title='Detail Segmentasi'
         className='bg-[#F8F8F8] flex-1 px-5 py-2 space-y-5'
       >
         <BreadCrumbDashboard
-          breadCrumbTextLink='Banner'
+          breadCrumbTextLink='Segmentation'
           breadCrumbLink='/dashboard/event-banner'
         />
         <div className='p-6 space-y-6 border-[1px] rounded-[4px] bg-white'>
-          <InformationBanner />
+          <InformationSegmentation />
         </div>
         <div className='flex-1'>
           <Button
-            buttonText='Hapus Banner'
+            buttonText='Hapus Segmentasi'
             className='w-full justify-center'
             danger
           />
         </div>
       </LayoutDashboard>
-    </>
+    </div>
   );
 };
 
-export default DetailBannerPage;
+export default DetailSegmentationPage;

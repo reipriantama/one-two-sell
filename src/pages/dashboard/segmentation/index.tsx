@@ -1,17 +1,15 @@
 import TitleDashboard from '@/components/feature/dashboard/titleDashboard';
 import LayoutDashboard from '@/components/layouts/dashboard';
 import ButtonTitle from '@/components/ui/dashboard/button';
-import React, { useMemo, useState } from 'react';
-
-import { tableData, Person } from '@/data/tableData';
 import DataTable from '@/components/ui/dashboard/dataTable';
+import { tableData } from '@/data/tableData';
 import { ColumnDef, createColumnHelper } from '@tanstack/react-table';
 import Link from 'next/link';
-import { IoMdInformationCircleOutline } from 'react-icons/io';
+import React, { useMemo, useState } from 'react';
 import { FaTrash } from 'react-icons/fa';
-import DeleteModal from '@/components/ui/dashboard/deleteModal';
+import { IoMdInformationCircleOutline } from 'react-icons/io';
 
-const AccountListPage = () => {
+const SegmentationPage = () => {
   const data = tableData;
   const [showDeleteModal, setIsShowDeleteModal] = useState(false);
 
@@ -23,34 +21,8 @@ const AccountListPage = () => {
 
   const useMemoColumn = useMemo<ColumnDef<any>[]>(() => {
     return [
-      columnHelper.accessor('firstName', {
-        header: 'Nama Akun',
-        cell: (info) => {
-          return (
-            <div className='flex gap-2 items-center'>
-              <div
-                className={`bg-[#40916C] text-white rounded-full 
-                size-8 flex justify-center items-center`}
-              >
-                {`${info.row.original.firstName.charAt(
-                  0
-                )} ${info.row.original.lastName.charAt(0)}`}
-              </div>
-              <p>{`${info.row.original.firstName} ${info.row.original.lastName}`}</p>
-            </div>
-          );
-        },
-      }),
-      columnHelper.accessor('email', {
-        header: 'Email',
-        cell: (info) => {
-          return (
-            <p className='truncate max-w-[122px]'>{info.row.original.email}</p>
-          );
-        },
-      }),
-      columnHelper.accessor('phone', {
-        header: 'Nomor Handphone',
+      columnHelper.accessor('typeEvent', {
+        header: 'Segmentasi',
         cell: (info) => info.getValue(),
       }),
 
@@ -59,15 +31,12 @@ const AccountListPage = () => {
         cell: (info) => {
           const value = info.getValue();
           return value ? (
-            <div className='bg-[#4A62A2] flex justify-center text-white w-[149px] px-3 py-2 text-xs rounded-2xl font-bold'>
-              Verified Account
-            </div>
+            <div className=' text-xs text-[#222222]'>Aktif</div>
           ) : (
-            '-'
+            <div className=' text-xs text-[#989898]'>Tidak Aktif</div>
           );
         },
       }),
-
       columnHelper.accessor('actions', {
         header: 'Detail',
         cell: (info) => {
@@ -85,10 +54,10 @@ const AccountListPage = () => {
 
           return (
             <div className='flex gap-2'>
-              <Link href={`/dashboard/account-list/${slugName}/`}>
-                <div className='text-[#129555]'>
-                  <IoMdInformationCircleOutline className='size-4' />
-                </div>
+              <Link
+                href={`/dashboard/segmentation/${info.row.original.typeEvent}`}
+              >
+                <IoMdInformationCircleOutline className='size-4 text-[#129555]' />
               </Link>
               <div>
                 <FaTrash
@@ -104,18 +73,18 @@ const AccountListPage = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <LayoutDashboard className='bg-[#F8F8F8] flex-1 px-5 py-2 space-y-5'>
-        <TitleDashboard title='List Akun'>
-          {/* <ButtonTitle buttonText='Add Account' /> */}
+        <TitleDashboard title='Segmentasi'>
+          <ButtonTitle
+            buttonText='Tambah Segmentasi'
+            link='/dashboard/segmentation/add-segmentation'
+          />
         </TitleDashboard>
-        <DataTable dataTable={data} column={useMemoColumn} />
+        <DataTable column={useMemoColumn} dataTable={data} />
       </LayoutDashboard>
-      {showDeleteModal && (
-        <DeleteModal onClick={closeModal} closeModal={closeModal} />
-      )}
-    </div>
+    </>
   );
 };
 
-export default AccountListPage;
+export default SegmentationPage;

@@ -2,6 +2,7 @@ import TitleDashboard from '@/components/feature/dashboard/titleDashboard';
 import LayoutDashboard from '@/components/layouts/dashboard';
 import ButtonTitle from '@/components/ui/dashboard/button';
 import DataTable from '@/components/ui/dashboard/dataTable';
+import DeleteModal from '@/components/ui/dashboard/deleteModal';
 import { tableData } from '@/data/tableData';
 import { ColumnDef, createColumnHelper } from '@tanstack/react-table';
 import Link from 'next/link';
@@ -85,6 +86,9 @@ const BannerPage = () => {
         </TitleDashboard>
         <DataTable column={useMemoColumn} dataTable={data} />
       </LayoutDashboard>
+      {showDeleteModal && (
+        <DeleteModal onClick={closeModal} closeModal={closeModal} />
+      )}
     </>
   );
 };
