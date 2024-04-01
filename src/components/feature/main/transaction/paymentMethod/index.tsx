@@ -17,6 +17,8 @@ const PaymentMethod = () => {
       </div>
       <div className='flex justify-between gap-6'>
         <div className='space-y-6 flex-1'>
+          {/* https://tailwindcomponents.com/component/radio-buttons-1 */}
+
           <Button
             buttonText='Credit/Debit Card'
             className='w-full text-[#757575] '
