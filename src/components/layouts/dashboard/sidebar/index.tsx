@@ -50,13 +50,13 @@ const SideBarDashboard = () => {
   const titleSideTicket = [
     {
       icon: '/assets/dashboard/layout/sidebar/iconSelling.svg',
-      title: 'Verfikasi Penjualan',
-      link: '/dashboard',
+      title: 'Verifikasi Penjualan',
+      link: '/dashboard/verification-sell',
     },
     {
       icon: '/assets/dashboard/layout/sidebar/iconPurchase.svg',
       title: 'Verifikasi Pembelian',
-      link: '/dashboard',
+      link: '/dashboard/verification-pay',
     },
   ];
 
@@ -90,7 +90,9 @@ const SideBarDashboard = () => {
                         : ''
                     }`}
                   />
-                  {item.title}
+                  <p className='group-hover:text-white group-hover:font-bold text-sm text-[#989898]'>
+                    {item.title}
+                  </p>
                 </div>
               </Link>
             ))}
@@ -101,27 +103,29 @@ const SideBarDashboard = () => {
           <div className=' space-y-1'>
             {titleSideEvent.map((item, index) => (
               <Link key={index} href={item.link} className='space-y-2'>
-              <div
-                className={`group hover:bg-[#2D4074] hover:rounded-[4px] hover:text-white px-3 py-2 flex items-center gap-2 cursor-pointer ${
-                  isActive(item.link)
-                    ? 'bg-[#2D4074] rounded-[4px] text-white font-bold'
-                    : ''
-                }`}
-              >
-                <Image
-                  src={item.icon}
-                  alt='icon'
-                  width={32}
-                  height={32}
-                  className={`invert-[62%] group-hover:filter group-hover:brightness-[0] group-hover:invert-[100%] ${
+                <div
+                  className={`group hover:bg-[#2D4074] hover:rounded-[4px] hover:text-white px-3 py-2 flex items-center gap-2 cursor-pointer ${
                     isActive(item.link)
-                      ? 'filter brightness-[0] invert-[100%]'
+                      ? 'bg-[#2D4074] rounded-[4px] text-white font-bold'
                       : ''
                   }`}
-                />
-                {item.title}
-              </div>
-            </Link>
+                >
+                  <Image
+                    src={item.icon}
+                    alt='icon'
+                    width={32}
+                    height={32}
+                    className={`invert-[62%] group-hover:filter group-hover:brightness-[0] group-hover:invert-[100%] ${
+                      isActive(item.link)
+                        ? 'filter brightness-[0] invert-[100%]'
+                        : ''
+                    }`}
+                  />
+                  <p className='group-hover:text-white group-hover:font-bold text-sm text-[#989898]'>
+                    {item.title}
+                  </p>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -129,25 +133,30 @@ const SideBarDashboard = () => {
           <p className='font-bold'>Tiket</p>
           <div className=' space-y-1'>
             {titleSideTicket.map((item, index) => (
-              <div
-                key={index}
-                className='group hover:bg-[#2D4074] hover:rounded-[4px] 
-                px-3 py-2 py flex items-center gap-2 cursor-pointer'
-              >
-                <Image
-                  src={item.icon}
-                  alt='icon'
-                  width={32}
-                  height={32}
-                  className={`
-                  group-hover:filter
-                  group-hover:brightness-[0]
-                  group-hover:invert-[100%]`}
-                />
-                <p className='group-hover:text-white group-hover:font-bold text-sm text-[#989898]'>
-                  {item.title}
-                </p>
-              </div>
+              <Link key={index} href={item.link} className='space-y-2'>
+                <div
+                  className={`group hover:bg-[#2D4074] hover:rounded-[4px] hover:text-white px-3 py-2 flex items-center gap-2 cursor-pointer ${
+                    isActive(item.link)
+                      ? 'bg-[#2D4074] rounded-[4px] text-white font-bold'
+                      : ''
+                  }`}
+                >
+                  <Image
+                    src={item.icon}
+                    alt='icon'
+                    width={32}
+                    height={32}
+                    className={`invert-[62%] group-hover:filter group-hover:brightness-[0] group-hover:invert-[100%] ${
+                      isActive(item.link)
+                        ? 'filter brightness-[0] invert-[100%]'
+                        : ''
+                    }`}
+                  />
+                  <p className='group-hover:text-white group-hover:font-bold text-sm text-[#989898]'>
+                    {item.title}
+                  </p>
+                </div>
+              </Link>
             ))}
           </div>
         </div>

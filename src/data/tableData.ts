@@ -17,6 +17,7 @@ export type Person = {
   dateEvent: string;
   genre: string;
   banner: string;
+  typeEventOl: string;
 };
 
 const range = (len: number) => {
@@ -37,10 +38,9 @@ export const tableData: Person[] = [...Array(30)].map(() => ({
   datePayment: faker.date.recent().toDateString(),
   detail: faker.lorem.paragraph(),
   status: faker.datatype.boolean(),
-  typeEvent: faker.helpers.arrayElement(['Festival', 'Seminar']),
-  eventName: faker.helpers.fake([
-    'Parade Sihir - {{location.cityName}}',
-  ]),
+  typeEvent: faker.helpers.arrayElement(['Festival', 'Seminar', 'Konser']),
+  typeEventOl: faker.helpers.arrayElement(['online', 'offline', 'hybrid']),
+  eventName: faker.helpers.fake(['Parade Sihir - {{location.cityName}}']),
   dateEvent: faker.date.future().toDateString(),
   genre: faker.music.genre(),
   format: faker.helpers.arrayElement(['Online', 'Offline']),
