@@ -11,7 +11,7 @@ const ModalDetailTicket = (props: any) => {
           <div className='text-2xl font-semibold'>Detail Tiket</div>
           <div>
             <IoClose
-              className='size-6 text-[#1C1B1F]'
+              className='size-6 text-[#1C1B1F] cursor-pointer hover:text-red-500'
               onClick={props.closeModal}
             />
           </div>

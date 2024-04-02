@@ -7,7 +7,10 @@ const ModalDetailTransaction = (props: any) => {
       <div className='w-full rounded-3xl max-w-[708px] bg-white p-6 space-y-6'>
         <div className='flex justify-between items-center'>
           <p className='text-2xl font-semibold'>Detail Transaksi</p>
-          <IoClose className=' text-[#1C1B1F]' onClick={props.closeModal} />
+          <IoClose
+            className='cursor-pointer hover:text-red-500 text-[#1C1B1F]'
+            onClick={props.closeModal}
+          />
         </div>
         <div className='space-y-6 '>
           <div className='border-b-[1px] pb-6'>

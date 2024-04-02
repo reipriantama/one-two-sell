@@ -40,7 +40,10 @@ const UserMenu = () => {
           <div className='w-full rounded-3xl max-w-[708px] bg-white p-6 space-y-6'>
             <div className='flex justify-between items-center'>
               <p className='text-2xl font-semibold'>Request Penarikan</p>
-              <IoClose className=' text-[#1C1B1F]' onClick={closeModal} />
+              <IoClose
+                className='cursor-pointer hover:text-red-500 text-[#1C1B1F]'
+                onClick={closeModal}
+              />
             </div>
             <div className='space-y-2 border-b-2 pb-6'>
               <p className='text-[#757575]'>Informasi Penarikan</p>

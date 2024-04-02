@@ -36,6 +36,36 @@ const AccountListPage = () => {
     setIsShowDeleteModal(false);
   };
 
+  const getBackgroundColor = (letter: string) => {
+    const redLetters = ['a', 'b', 'c', 'd'];
+    const blueLetters = ['e', 'f', 'g', 'h'];
+    const greenLetters = ['i', 'j', 'k', 'l'];
+    const yellowLetters = ['m', 'n', 'o', 'p'];
+    const orangeLetters = ['q', 'r', 's', 't'];
+    const purpleLetters = ['u', 'v', 'w', 'x'];
+    const skyBlueLetters = ['y', 'z'];
+
+    const firstLetter = letter.toLowerCase();
+
+    if (redLetters.includes(firstLetter)) {
+      return '#C41961';
+    } else if (blueLetters.includes(firstLetter)) {
+      return '#1993C8';
+    } else if (yellowLetters.includes(firstLetter)) {
+      return '#996699';
+    } else if (greenLetters.includes(firstLetter)) {
+      return '#40916C';
+    } else if (orangeLetters.includes(firstLetter)) {
+      return '#FF483C';
+    } else if (purpleLetters.includes(firstLetter)) {
+      return '#800080';
+    } else if (skyBlueLetters.includes(firstLetter)) {
+      return '#7ED8F7';
+    } else {
+      return '#000000';
+    }
+  };
+
   const columnHelper = createColumnHelper<any>();
 
   const useMemoColumn = useMemo<ColumnDef<any>[]>(() => {
@@ -43,11 +73,15 @@ const AccountListPage = () => {
       columnHelper.accessor('firstName', {
         header: 'Nama Akun',
         cell: (info) => {
+          const firstLetter = info.row.original.firstName
+            .charAt(0)
+            .toLowerCase();
+
           return (
             <div className='flex gap-2 items-center'>
               <div
-                className={`bg-[#40916C] text-white rounded-full 
-                size-8 flex justify-center items-center`}
+                style={{ backgroundColor: getBackgroundColor(firstLetter) }}
+                className='text-white rounded-full size-8 flex justify-center items-center'
               >
                 {`${info.row.original.firstName.charAt(
                   0
