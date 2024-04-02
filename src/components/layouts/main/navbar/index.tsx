@@ -1,19 +1,69 @@
 import Button from '@/components/ui/main/button';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import LoginModal from './loginModal';
 import SignUpModal from './signUpModal';
 import { cn } from '@/lib/utils';
+import { useRouter } from 'next/router';
+import { FaRegBell } from 'react-icons/fa';
+import { MdOutlineAccountCircle } from 'react-icons/md';
+import { IoMdArrowDropdown } from 'react-icons/io';
 
 const Navbar = (props: any) => {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showSignUpModal, setshowSignUpModal] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const router = useRouter();
 
   const closeModal = () => {
     setShowLoginModal(false);
     setshowSignUpModal(false);
+    router.push('/', undefined, { shallow: true });
+  };
+
+  useEffect(() => {
+    const { loginModal, signUpModal } = router.query;
+
+    if (loginModal === 'true') {
+      setShowLoginModal(true);
+    }
+
+    if (signUpModal === 'true') {
+      setshowSignUpModal(true);
+    }
+
+    // Check if user is logged in
+    const isUserLoggedIn = localStorage.getItem('isUserLoggedIn');
+    if (isUserLoggedIn === 'true') {
+      setIsLoggedIn(true);
+    }
+    if (!localStorage.getItem('isUserLoggedIn')) {
+      setIsLoggedIn(false);
+    }
+  }, [router.query, isLoggedIn]);
+
+  const openLoginModal = () => {
+    setShowLoginModal(true);
+    router.push('/?loginModal=true', undefined, { shallow: true });
+  };
+
+  const openSignUpModal = () => {
+    setshowSignUpModal(true);
+    router.push('/?signUpModal=true', undefined, { shallow: true });
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('isUserLoggedIn');
+    setIsLoggedIn(false);
+    router.push('/', undefined, { shallow: true });
+  };
+
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
   };
 
   return (
@@ -58,19 +108,47 @@ const Navbar = (props: any) => {
           )}
         </div>
 
-        {!props.hidden && (
+        {isLoggedIn && (
+          <>
+            <div className='flex gap-2 items-center relative'>
+              <FaRegBell className='size-6' />
+              <MdOutlineAccountCircle className='size-6' />
+              <Link
+                href={`/user/${localStorage.getItem('userName')}`}
+                className='font-semibold'
+              >
+                {localStorage.getItem('userName') || 'guest'}
+              </Link>
+              <button className='cursor-pointer' onClick={toggleDropdown}>
+                <IoMdArrowDropdown />
+              </button>
+              {showDropdown && (
+                <div className='absolute top-6 right-0 mt-2 bg-white border border-gray-200 rounded shadow-lg z-10'>
+                  <button
+                    className='block w-full text-left px-4 py-2 hover:bg-gray-100'
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </button>
+                </div>
+              )}
+            </div>
+          </>
+        )}
+
+        {!props.hidden && !isLoggedIn && (
           <div className='flex gap-4'>
             <Button
               buttonText='Daftar'
               className='w-[121px] flex justify-center text-navy-blue font-semibold'
               outline
-              onClick={() => setshowSignUpModal(true)}
+              onClick={openSignUpModal}
             />
             <Button
               buttonText='Masuk'
               className='w-[121px] flex justify-center font-semibold'
               primary
-              onClick={() => setShowLoginModal(true)}
+              onClick={openLoginModal}
             />
           </div>
         )}

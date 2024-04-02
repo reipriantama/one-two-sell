@@ -20,7 +20,7 @@ const Footer = () => {
     'Workshop & Seminar',
     'Teater & Komedi',
     'Atraksi',
-    'Semua Kota',
+    'Semua Kategori',
   ];
 
   return (

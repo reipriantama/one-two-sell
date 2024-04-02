@@ -7,7 +7,7 @@ const VoucherBid = () => {
   return (
     <div>
       <Layout className='py-12 px-[276px] space-y-6' title='User-Voucher-Bid'>
-        <BreadcrumbUser breadcrumbText='Voucher Bid' />
+        <BreadcrumbUser breadcrumbText1='Voucher Bid' />
         <VoucherBidCard />
       </Layout>
     </div>
