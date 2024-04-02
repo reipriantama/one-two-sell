@@ -5,10 +5,25 @@ import FilterTop from '@/components/feature/main/eventPage/filter';
 import EventCard from '@/components/feature/main/eventPage/eventCard';
 import Pagination from '@/components/feature/main/eventPage/pagination';
 import SideBarEvent from '@/components/feature/main/eventPage/sideBar';
-import eventData from '@/data/eventData.json';
-import { EventDataType } from '@/types/eventData.type';
+import { useEffect, useState } from 'react';
 
 const AllEvent = () => {
+  const [eventData, setEventData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch('/api/eventData');
+        const data = await res.json();
+        setEventData(data);
+      } catch (error) {
+        console.log('error fetching data', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   const formatPriceToRupiah = (price: number): string => {
     const formattedPrice = new Intl.NumberFormat('id-ID', {
       style: 'currency',

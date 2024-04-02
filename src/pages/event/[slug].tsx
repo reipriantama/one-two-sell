@@ -9,8 +9,10 @@ import Button from '@/components/ui/main/button';
 import Layout from '@/components/layouts/main';
 import eventData from '@/data/eventData.json';
 import { MdOutlineChevronRight } from 'react-icons/md';
+import { useState } from 'react';
 
 const DetailProductPage = () => {
+  const [eventData, setEventData] = useState([]);
   return (
     <>
       <Layout className='py-12 space-y-12' title='Detail'>

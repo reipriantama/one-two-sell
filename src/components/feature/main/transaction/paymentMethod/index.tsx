@@ -17,40 +17,112 @@ const PaymentMethod = () => {
       </div>
       <div className='flex justify-between gap-6'>
         <div className='space-y-6 flex-1'>
-          {/* https://tailwindcomponents.com/component/radio-buttons-1 */}
+          <div>
+            <input
+              type='radio'
+              name='option'
+              id='1'
+              value='1'
+              className='peer hidden'
+            />
+            <label
+              htmlFor='1'
+              className='hover:bg-indigo-500 text-base text-[#989898]
+              border-[1px] rounded-[4px] block cursor-pointer select-none py-4 px-4 
+              peer-checked:bg-navy-blue peer-checked:font-bold peer-checked:text-white'
+            >
+              Credit/Debit Card
+            </label>
+          </div>
 
-          <Button
-            buttonText='Credit/Debit Card'
-            className='w-full text-[#757575] '
-            outline
-          />
-          <Button
-            buttonText='Virtual Account'
-            className='w-full text-[#757575] '
-            outline
-          />
-          <Button
-            buttonText='Go-Pay'
-            className='w-full text-[#757575] '
-            outline
-          />
+          <div>
+            <input
+              type='radio'
+              name='option'
+              id='2'
+              value='2'
+              className='peer hidden'
+            />
+            <label
+              htmlFor='2'
+              className='hover:bg-indigo-500 text-base text-[#989898]
+              border-[1px] rounded-[4px] block cursor-pointer select-none py-4 px-4 
+              peer-checked:bg-navy-blue peer-checked:font-bold peer-checked:text-white'
+            >
+              Virtual Account
+            </label>
+          </div>
+
+          <div>
+            <input
+              type='radio'
+              name='option'
+              id='3'
+              value='3'
+              className='peer hidden'
+            />
+            <label
+              htmlFor='3'
+              className='hover:bg-indigo-500 text-base text-[#989898]
+              border-[1px] rounded-[4px] block cursor-pointer select-none py-4 px-4 
+              peer-checked:bg-navy-blue peer-checked:font-bold peer-checked:text-white'
+            >
+              Go-Pay
+            </label>
+          </div>
         </div>
         <div className='space-y-6 flex-1'>
-          <Button
-            buttonText='Bank Transfer'
-            className='w-full text-[#757575] '
-            outline
-          />
-          <Button
-            buttonText='Virtual Account'
-            className='w-full text-[#757575] '
-            outline
-          />
-          <Button
-            buttonText='Indomaret'
-            className='w-full text-[#757575] '
-            outline
-          />
+          <div>
+            <input
+              type='radio'
+              name='option'
+              id='4'
+              value='4'
+              className='peer hidden'
+            />
+            <label
+              htmlFor='4'
+              className='hover:bg-indigo-500 text-base text-[#989898]
+              border-[1px] rounded-[4px] block cursor-pointer select-none py-4 px-4 
+              peer-checked:bg-navy-blue peer-checked:font-bold peer-checked:text-white'
+            >
+              Bank Transfer
+            </label>
+          </div>
+          <div>
+            <input
+              type='radio'
+              name='option'
+              id='5'
+              value='5'
+              className='peer hidden'
+            />
+            <label
+              htmlFor='5'
+              className='hover:bg-indigo-500 text-base text-[#989898]
+              border-[1px] rounded-[4px] block cursor-pointer select-none py-4 px-4 
+              peer-checked:bg-navy-blue peer-checked:font-bold peer-checked:text-white'
+            >
+              Virtual Account
+            </label>
+          </div>
+          <div>
+            <input
+              type='radio'
+              name='option'
+              id='6'
+              value='6'
+              className='peer hidden'
+            />
+            <label
+              htmlFor='6'
+              className='hover:bg-indigo-500 text-base text-[#989898]
+              border-[1px] rounded-[4px] block cursor-pointer select-none py-4 px-4 
+              peer-checked:bg-navy-blue peer-checked:font-bold peer-checked:text-white'
+            >
+              Indomaret
+            </label>
+          </div>
         </div>
       </div>
       <div className='border-t-[1px]'>

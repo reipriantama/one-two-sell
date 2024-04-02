@@ -1,19 +1,45 @@
 import Button from '@/components/ui/main/button';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import LoginModal from './loginModal';
 import SignUpModal from './signUpModal';
 import { cn } from '@/lib/utils';
+import { useRouter } from 'next/router';
 
 const Navbar = (props: any) => {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showSignUpModal, setshowSignUpModal] = useState(false);
 
+  const router = useRouter();
+
   const closeModal = () => {
     setShowLoginModal(false);
     setshowSignUpModal(false);
+    router.push('/', undefined, { shallow: true }); // clear query params
+  };
+
+  useEffect(() => {
+    const { loginModal, signUpModal } = router.query;
+
+    if (loginModal === 'true') {
+      setShowLoginModal(true);
+    }
+
+    if (signUpModal === 'true') {
+      setshowSignUpModal(true);
+    }
+  }, [router.query]);
+
+  const openLoginModal = () => {
+    setShowLoginModal(true);
+    router.push('/?loginModal=true', undefined, { shallow: true });
+  };
+
+  const openSignUpModal = () => {
+    setshowSignUpModal(true);
+    router.push('/?signUpModal=true', undefined, { shallow: true });
   };
 
   return (
@@ -64,13 +90,13 @@ const Navbar = (props: any) => {
               buttonText='Daftar'
               className='w-[121px] flex justify-center text-navy-blue font-semibold'
               outline
-              onClick={() => setshowSignUpModal(true)}
+              onClick={openSignUpModal}
             />
             <Button
               buttonText='Masuk'
               className='w-[121px] flex justify-center font-semibold'
               primary
-              onClick={() => setShowLoginModal(true)}
+              onClick={openLoginModal}
             />
           </div>
         )}

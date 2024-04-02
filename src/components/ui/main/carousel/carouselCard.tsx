@@ -19,6 +19,7 @@ const CarouselCard = ({
   eventData: EventDataType[];
   className: string;
 }) => {
+
   const id = useId().replace(/[^a-zA-Z0-9]/g, '');
   const formatPriceToRupiah = (price: number): string => {
     const formattedPrice = new Intl.NumberFormat('id-ID', {

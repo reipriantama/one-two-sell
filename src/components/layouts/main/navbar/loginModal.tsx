@@ -60,7 +60,7 @@ const LoginModal = ({ closeModal }: { closeModal: () => void }) => {
             />
             <p className='flex justify-center text-navy-blue'>
               Pengguna baru ?
-              <Link href='' className='underline'>
+              <Link href='?signUpModal=true' className='underline'>
                 {' '}
                 Daftar disini
               </Link>
