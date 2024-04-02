@@ -9,7 +9,9 @@ const BreadcrumbUser = (props: any) => {
         <Link href='/user'>Profile</Link>
       </div>
       <MdChevronRight className='size-5' />
-      <div className={`text-sm  font-medium ${props.classNameText1} `}>
+      <div
+        className={`text-sm text-[#757575] font-medium ${props.classNameText1} `}
+      >
         {props.breadcrumbText1}
       </div>
       {props.breadcrumbText2 && (

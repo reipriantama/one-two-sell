@@ -1,7 +1,7 @@
 import TitleDashboard from '@/components/feature/dashboard/titleDashboard';
 import LayoutDashboard from '@/components/layouts/dashboard';
 import ButtonTitle from '@/components/ui/dashboard/button';
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
 import { tableData, Person } from '@/data/tableData';
 import DataTable from '@/components/ui/dashboard/dataTable';
@@ -12,8 +12,25 @@ import { FaTrash } from 'react-icons/fa';
 import DeleteModal from '@/components/ui/dashboard/deleteModal';
 
 const AccountListPage = () => {
-  const data = tableData;
+  // const data = tableData;
+  const [data, setData] = useState([]);
   const [showDeleteModal, setIsShowDeleteModal] = useState(false);
+
+  console.log(data);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch('/api/dataTable');
+        const data = await res.json();
+        setData(data);
+      } catch (error) {
+        console.log('error fetching data', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const closeModal = () => {
     setIsShowDeleteModal(false);

@@ -5,7 +5,6 @@ import { MdOutlineLocationOn } from 'react-icons/md';
 
 const DetailCard = () => {
   const { query } = useRouter();
-  console.log(query.slug);
 
   return (
     <div

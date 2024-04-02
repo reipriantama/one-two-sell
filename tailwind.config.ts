@@ -8,6 +8,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
+        fullLg: '0 10px 8px rgb(0 0 0 / 0.04)',
+      },
+      dropShadow: {
+        '3xl': '0 35px 35px rgba(0, 0, 0, 0.25)',
+        fullLg: '0 10px 8px rgb(0 0 0 / 0.04)',
+      },
       colors: {
         'navy-blue': '#4A62A2',
         'gradient-blue': `linear-gradient(to bottom, #4A62A2, #2D4074)`,

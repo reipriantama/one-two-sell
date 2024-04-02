@@ -14,15 +14,15 @@ import { IoMdArrowDropdown } from 'react-icons/io';
 const Navbar = (props: any) => {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showSignUpModal, setshowSignUpModal] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Add isLoggedIn state
-  const [showDropdown, setShowDropdown] = useState(false); // State for dropdown
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   const router = useRouter();
 
   const closeModal = () => {
     setShowLoginModal(false);
     setshowSignUpModal(false);
-    router.push('/', undefined, { shallow: true }); // clear query params
+    router.push('/', undefined, { shallow: true });
   };
 
   useEffect(() => {
@@ -59,10 +59,11 @@ const Navbar = (props: any) => {
   const handleLogout = () => {
     localStorage.removeItem('isUserLoggedIn');
     setIsLoggedIn(false);
+    router.push('/', undefined, { shallow: true });
   };
 
   const toggleDropdown = () => {
-    setShowDropdown(!showDropdown); // Toggle dropdown state
+    setShowDropdown(!showDropdown);
   };
 
   return (
