@@ -1,8 +1,12 @@
 import Image from 'next/image';
 import React from 'react';
 import Button from '../../../../ui/main/button';
+import { useRouter } from 'next/router';
 
 const UserProfile = () => {
+  const { query } = useRouter();
+
+  console.log(query);
   return (
     <div className='p-10 flex justify-between border-2 rounded-2xl shadow-sm '>
       <div className='flex gap-6  flex-1'>
@@ -17,8 +21,8 @@ const UserProfile = () => {
         </div>
         <div className='space-y-12 mr-[72px]'>
           <div className='flex gap-[156px]'>
-            <p className='text-[34px] font-semibold'>John Doe</p>
-            <div>
+            <p className='text-[34px] font-semibold'>{query.slug}</p>
+            {/* <div>
               <Image
                 src='assets/main/user/userProfile/verified.svg'
                 alt='logo'
@@ -26,7 +30,7 @@ const UserProfile = () => {
                 height={44}
                 className='rounded-full size-[44px] object-cover'
               />
-            </div>
+            </div> */}
           </div>
           <div className='space-y-'>
             <div className='flex gap-9'>
