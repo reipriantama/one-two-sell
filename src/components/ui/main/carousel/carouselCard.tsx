@@ -19,7 +19,6 @@ const CarouselCard = ({
   eventData: EventDataType[];
   className: string;
 }) => {
-
   const id = useId().replace(/[^a-zA-Z0-9]/g, '');
   const formatPriceToRupiah = (price: number): string => {
     const formattedPrice = new Intl.NumberFormat('id-ID', {
@@ -29,7 +28,7 @@ const CarouselCard = ({
     return formattedPrice;
   };
   return (
-    <div className='space-y-1 relative'>
+    <div className='relative space-y-1'>
       <Swiper
         slidesPerView={4.5}
         spaceBetween={24}
@@ -50,27 +49,29 @@ const CarouselCard = ({
       >
         {eventData?.map((data: any, index: number) => (
           <SwiperSlide className='' key={index}>
-            <div className='mb-3'>
-              <Image
-                src={data.image}
-                alt='logo'
-                width={318}
-                height={240}
-                className='rounded-xl bg-gray-500 h-[240px] w-full object-cover'
-              />
-            </div>
-            <div className='flex flex-col gap-1 text-[#4A62A2] font-semibold mb-3'>
-              <div className={`text-sm font-semibold`}>{data.date}</div>
-              <div className={`text-xl ${className}`}>
-                <Link href={`/event/${data.title}`}>{data.title}</Link>
+            <Link href={`/event/${data.id}`} className='cursor-pointer '>
+              <div className='mb-3'>
+                <Image
+                  src={data.image}
+                  alt='logo'
+                  width={318}
+                  height={240}
+                  className='hover:opacity-80 rounded-xl bg-gray-500 h-[240px] w-full object-cover'
+                />
               </div>
-              <div className='text-[#848484] text-sm font-normal'>
-                {data.location}
+              <div className='flex flex-col gap-1 text-[#4A62A2] font-semibold mb-3'>
+                <div className={`text-sm font-semibold`}>{data.date}</div>
+                <div className={`text-xl ${className}`}>
+                  <Link href={`/event/${data.id}`}>{data.title}</Link>
+                </div>
+                <div className='text-[#848484] text-sm font-normal'>
+                  {data.location}
+                </div>
               </div>
-            </div>
-            <div className={`text-lg text-[#4A62A2] font-bold ${className}`}>
-              {formatPriceToRupiah(data.price)}
-            </div>
+              <div className={`text-lg text-[#4A62A2] font-bold ${className}`}>
+                {formatPriceToRupiah(data.price)}
+              </div>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

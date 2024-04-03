@@ -48,7 +48,7 @@ export const tableData: Person[] = [...Array(30)].map(() => ({
     'Festival',
     'Seminar & Workshop',
     'Konser',
-    'Teater & komerdi',
+    'Teater & komedi',
     'Atraksi',
     'Olahraga',
   ]),

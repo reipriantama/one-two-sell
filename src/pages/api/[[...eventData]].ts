@@ -21,7 +21,7 @@ export default function handler(
     {
       id: 1,
       image:
-        'https://s3-alpha-sig.figma.com/img/4ef8/5249/815a637e9b42f99b2c18b7d9dddd1079?Expires=1711929600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oFdQUIjzw5IOa1~sJAaPx8mL7QA6~KqdeVJgzE75~OCj4DOrHSMP6SUXlTxLSRX9Xbdu9-T0YnjGWNeK7fJqp7dXrRAg1l4gUZieLO~zpmaGue5lz9a3QN90n2Ox71E8C2uB7nKqLx~H88BDLpbvqdefSz0Rrz-E8ESrFvTLwSJwJDZyZdC-wsro9BtYj0I1ZHCsAPPmWY0Gm~oKxA03bfZ7dfy80-JAZm5EKPYMnSBkkxhFVaZVk4buHQVQf9pmwWfB~nAX7Vr557314rep8Q~RRsqWur8XnWrJVmaFGECwRFAImfdUI7pniYjx39FJuTtjeY8F4WDwWh8IyltwaQ__',
+        'https://www.rollingstone.com/wp-content/uploads/2023/05/clairo-live-RS-1800.jpg',
       title: "Substance: Albert Hofmann's ",
       date: '14-Mar-2024',
       location: '72 Londonderry Parkway',
@@ -216,8 +216,9 @@ export default function handler(
       (item) => item.id.toString() === eventData[1]
     );
 
-    console.log('filteredData', filteredData);
-    res.status(200).json(filteredData);
+    const filteredObject: any = filteredData[0];
+
+    res.status(200).json(filteredObject);
   } else {
     res.status(200).json(data);
   }

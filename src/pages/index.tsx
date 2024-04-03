@@ -46,7 +46,7 @@ export default function Home() {
             link='/event'
             buttonText='Lihat ke event lainnya'
             outline
-            className='px-9 font-semibold '
+            className='font-semibold px-9 '
             icon={<MdOutlineChevronRight className='size-' />}
           />
         </div>

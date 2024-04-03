@@ -8,8 +8,15 @@ import {
 import Button from '../../../../ui/main/button';
 import { useState } from 'react';
 
-const TicketAvailable = () => {
+const TicketAvailable = ({
+  selectedTicketPrice,
+  handleBuyTicket,
+}: {
+  selectedTicketPrice: number;
+  handleBuyTicket: () => void;
+}) => {
   const [count, setCount] = useState<number>(0);
+  const [ticketData, setTicketData] = useState<any>({});
 
   const rupiah = (number: number) => {
     return new Intl.NumberFormat('id-ID', {
@@ -28,8 +35,8 @@ const TicketAvailable = () => {
   };
 
   const decreaseCount = () => {
-    if (count > 0) {
-      setCount(count - 10_000);
+    if (count >= 10_000) {
+      setCount((prevCount) => prevCount - 10_000);
     }
   };
 
@@ -37,10 +44,12 @@ const TicketAvailable = () => {
     setCount(count + 10_000);
   };
 
+  const totalTicketPrice = selectedTicketPrice + count;
+
   return (
     <div className='xl:w-[432px] border-2 rounded-xl p-6 space-y-6'>
       <div className='text-sm font-semibold'>Tiket tersedia</div>
-      <div className='flex justify-between items-center'>
+      <div className='flex items-center justify-between'>
         <div className='space-y-1'>
           <p>General Admission - Early Bird</p>
           <div className='text-[10px] font text-[#A6A6A6]'>
@@ -48,7 +57,7 @@ const TicketAvailable = () => {
           </div>
         </div>
         <Select>
-          <SelectTrigger className='max-w-min gap-1'>
+          <SelectTrigger className='gap-1 max-w-min'>
             <SelectValue placeholder='1' />
           </SelectTrigger>
           <SelectContent className='bg-white '>
@@ -60,8 +69,10 @@ const TicketAvailable = () => {
       </div>
       <div className='space-y-2'>
         <p className='text-sm text-[#848484]'>Bid Saat Ini</p>
-        <div className='text-[#2D4074] text-2xl font-bold'>{rupiah(count)}</div>
-        <div className='flex gap-2 items-center'>
+        <div className='text-[#2D4074] text-2xl font-bold'>
+          {rupiah(totalTicketPrice)}
+        </div>
+        <div className='flex items-center gap-2'>
           <div className='size-9 bg-[#D9D9D9] rounded-full'></div>
           <div>Johnny Doe</div>
         </div>
@@ -96,8 +107,9 @@ const TicketAvailable = () => {
       <div className='space-y-2'>
         <Button
           buttonText='Beli Tiket'
-          className='w-full flex justify-center'
+          className='flex justify-center w-full'
           primary
+          onClick={handleBuyTicket}
         />
         <div className='flex justify-center text-[10px] text-[#A6A6A6]'>
           Anda punya 3 Voucher Bid
@@ -105,7 +117,7 @@ const TicketAvailable = () => {
       </div>
       <div className='flex flex-col items-center'>
         <p className='text-[#848484] text-sm'>Penawaran berakhir dalam</p>
-        <p className='text-navy-blue text-base font-semibold'>
+        <p className='text-base font-semibold text-navy-blue'>
           18 May 2023, 21.00
         </p>
         <p className='text-[10px] text-[#D73A28]'>6 Hari, 12:20:30</p>

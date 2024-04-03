@@ -7,6 +7,7 @@ const nextConfig = {
       's3-alpha-sig.figma.com',
       'i0.wp.com',
       'res.cloudinary.com',
+      'www.rollingstone.com',
     ],
   },
 };
