@@ -7,12 +7,30 @@ import TermCondition from '@/components/feature/main/detail/termCondition';
 import TicketAvailable from '@/components/feature/main/detail/ticketAvailable';
 import Button from '@/components/ui/main/button';
 import Layout from '@/components/layouts/main';
-import eventData from '@/data/eventData.json';
 import { MdOutlineChevronRight } from 'react-icons/md';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 const DetailProductPage = () => {
   const [eventData, setEventData] = useState([]);
+  const { query } = useRouter();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(`/api/eventData?id=${query.id}`);
+        const data = await res.json();
+        setEventData(data);
+      } catch (error) {
+        console.log('error fetching data', error);
+      }
+    };
+
+    fetchData();
+  }, [query.id]);
+
+  console.log(query.id);
+
   return (
     <>
       <Layout className='py-12 space-y-12' title='Detail'>

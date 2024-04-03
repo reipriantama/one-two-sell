@@ -24,7 +24,7 @@ const EventCard: React.FC<EventCardProps> = ({ eventData, price }) => {
           <div className='flex flex-col gap-1 text-[#4A62A2] font-semibold mb-3'>
             <div className={`text-sm font-semibold`}>{data.date}</div>
             <div className={`text-xl `}>
-              <Link href={`/event/${data.title}`}>{data.title}</Link>
+              <Link href={`/event/${data.id}`}>{data.title}</Link>
             </div>
             <div className='text-[#848484] text-sm font-normal'>
               {data.location}

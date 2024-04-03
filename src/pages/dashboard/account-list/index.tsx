@@ -3,7 +3,6 @@ import LayoutDashboard from '@/components/layouts/dashboard';
 import ButtonTitle from '@/components/ui/dashboard/button';
 import React, { useEffect, useMemo, useState } from 'react';
 
-import { tableData, Person } from '@/data/tableData';
 import DataTable from '@/components/ui/dashboard/dataTable';
 import { ColumnDef, createColumnHelper } from '@tanstack/react-table';
 import Link from 'next/link';
@@ -12,7 +11,6 @@ import { FaTrash } from 'react-icons/fa';
 import DeleteModal from '@/components/ui/dashboard/deleteModal';
 
 const AccountListPage = () => {
-  // const data = tableData;
   const [data, setData] = useState([]);
   const [showDeleteModal, setIsShowDeleteModal] = useState(false);
 

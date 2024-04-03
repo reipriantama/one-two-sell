@@ -24,6 +24,8 @@ const AllEvent = () => {
     fetchData();
   }, []);
 
+  console.log(eventData);
+
   const formatPriceToRupiah = (price: number): string => {
     const formattedPrice = new Intl.NumberFormat('id-ID', {
       style: 'currency',

@@ -15,6 +15,8 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Item[]>
 ) {
+  const { eventData } = req.query;
+
   const data: Item[] = [
     {
       id: 1,
@@ -209,5 +211,14 @@ export default function handler(
     },
   ];
 
-  res.status(200).json(data);
+  if (eventData && eventData[1]) {
+    const filteredData = data.filter(
+      (item) => item.id.toString() === eventData[1]
+    );
+
+    console.log('filteredData', filteredData);
+    res.status(200).json(filteredData);
+  } else {
+    res.status(200).json(data);
+  }
 }
