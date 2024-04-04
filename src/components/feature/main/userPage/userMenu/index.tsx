@@ -14,6 +14,7 @@ const UserMenu = () => {
       <Button
         buttonText='Jual Tiket'
         className='w-full py-3 px-2 font-semibold border-b-2 '
+        link='/user/sales-list'
       />
       <Button
         buttonText='Request Penarikan'

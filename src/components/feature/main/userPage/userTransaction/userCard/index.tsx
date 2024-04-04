@@ -74,7 +74,7 @@ const UserCard = (props: any) => {
                 </div>
               </div>
               <div className='text-xs bg-[#4A62A2] flex items-center text-white px-2 rounded-[4px] max-h-7'>
-                Proses Bid
+                {props.progress ? 'Proses Bid' : 'Menunggu'}
               </div>
             </div>
             <p
